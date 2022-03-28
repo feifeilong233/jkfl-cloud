@@ -1,0 +1,46 @@
+server:
+  port: 9527 # 这个端口要和vue项目里vue.config.js里的devServer里面配置的相同
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: mazi926*
+    url: jdbc:mysql://localhost:3306/jkfl?serverTimezone=GMT%2B8
+    hikari:
+      #连接池名
+      pool-name: DateHikariCP
+      #最小空闲连接数
+      minimum-idle: 10
+      # 空闲连接存活最大时间，默认600000（10分钟）
+      idle-timeout: 180000
+      # 连接池最大连接数，默认是10
+      maximum-pool-size: 60
+      # 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      max-lifetime: 1800000
+      # 数据库连接超时时间,默认30秒，即30000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+    jpa:
+      # 调试的时候用，用于打印完成SQL语句(但是不打印参数),联合下面的logging.level一同打印最完整的SQL信息(语句+参数)
+      show-sql: false
+      hibernate:
+        ddl-auto: update
+    xa:
+      properties:
+        useInformationSchema: true
+  servlet:
+    multipart:
+      max-file-size: 100MB # 最大支持文件大小
+      max-request-size: 100MB # 最大支持请求大小
+
+# 拦截器相关的配置
+interceptors:
+  # 不需要进行鉴权的接口地址，用逗号隔开
+  auth-ignore-uris: /api/user/register,/api/user/login
+
+# SQL语句打印(能打印参数，设置为trace是打印完整语句，默认我们就关掉吧)
+logging:
+  level:
+    org.hibernate.type.descriptor.sql.BasicBinder: off

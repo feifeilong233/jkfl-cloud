@@ -1,0 +1,80 @@
+server:
+  port: 8013
+
+spring:
+  application:
+    name: exam-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/jkfl?serverTimezone=GMT%2B8
+    hikari:
+      #连接池名
+      pool-name: DateHikariCP
+      #最小空闲连接数
+      minimum-idle: 10
+      # 空闲连接存活最大时间，默认600000（10分钟）
+      idle-timeout: 180000
+      # 连接池最大连接数，默认是10
+      maximum-pool-size: 60
+      # 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      max-lifetime: 1800000
+      # 数据库连接超时时间,默认30秒，即30000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+    xa:
+      properties:
+        useInformationSchema: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-not-delete-value: 0 # 未删除为 0
+      logic-delete-value: 1 # 删了就是 1
+
+feign:
+  compression:
+    request:
+      enabled: true # 开启请求压缩
+      mime-types: text/html,application/xml,application/json #设置压缩的数据类型
+      min-request-size: 2048 #设置触发压缩的大小下限
+    response:
+      enabled: true
+  client:
+    config:
+      exam-server:
+        loggerLevel: FULL
+
+# 修改负载均衡器策略   服务名 - ribbon - NFLoadBalancerRuleClassName：策略
+exam-server:
+  ribbon:
+    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    ConnectTimeout: 250 # Ribbon连接超时时间
+    ReadTimeout: 1000 # Ribbon数据读取超时时间
+    OkToRetryOnAllOperations: true # 是否对所有操作进行重试
+    MaxAutoRetriesNextServer: 1 # 切换实例的重试次数
+    MaxAutoRetries: 1 #对当前实例的重试次数
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true #使用ip地址注册
+    instance-id: ${spring.cloud.client.ip-address}:${server.port} #向服务中心注册服务id
+    lease-renewal-interval-in-seconds: 5 #向注册中心注册服务id
+    lease-expiration-duration-in-seconds: 10 #续约到期时间
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
