@@ -10,13 +10,19 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>eureka-server</module>
+        <module>user-server</module>
         <module>config-server</module>
-        <module>service</module>
+        <module>exam-server</module>
         <module>rbac-server</module>
         <module>client-server</module>
-
-
+        <module>teach-server</module>
     </modules>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
 
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -71,6 +77,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
+        
 
         <!--screw-->
         <dependency>

@@ -1,7 +1,7 @@
 package cloud.jkfl.rbac.controller;
 
-import cloud.jkfl.commonutils.LogInfoMsg;
-import cloud.jkfl.commonutils.R;
+import cloud.jkfl.common.utils.LogInfoMsg;
+import cloud.jkfl.common.utils.R;
 import cloud.jkfl.rbac.pojo.Log;
 import cloud.jkfl.rbac.service.Impl.LogServiceImpl;
 import cloud.jkfl.rbac.service.Impl.RootInfoServiceImpl;
@@ -16,11 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/back")
 public class InterfaceController {
 
+
     @Autowired
     private RootInfoServiceImpl rootInfoService;
 
+
     @Autowired
     private LogServiceImpl logService;
+
 
     @ApiModelProperty(value = "查询数据接口文档")
     @PostMapping("/interface")

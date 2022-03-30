@@ -1,14 +1,13 @@
 package cloud.jkfl.rbac.controller;
 
-import cloud.jkfl.commonutils.LogInfoMsg;
-import cloud.jkfl.commonutils.R;
+import cloud.jkfl.common.utils.LogInfoMsg;
+import cloud.jkfl.common.utils.R;
 import cloud.jkfl.rbac.pojo.Log;
-import cloud.jkfl.rbac.pojo.Student;
-import cloud.jkfl.rbac.pojo.Teacher;
+import cloud.jkfl.rbac.pojo.User;
 import cloud.jkfl.rbac.service.Impl.LogServiceImpl;
 import cloud.jkfl.rbac.service.Impl.RootInfoServiceImpl;
 import cloud.jkfl.rbac.service.Impl.StudentServiceImpl;
-import cloud.jkfl.rbac.service.RootInfoService;
+import cloud.jkfl.rbac.service.Impl.UserServiceImpl;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,14 +19,18 @@ import java.util.Map;
 @RequestMapping("/back")
 public class StudentController {
 
+
     @Autowired
-    private StudentServiceImpl studentService;
+    private UserServiceImpl studentService;
+
 
     @Autowired
     private RootInfoServiceImpl rootInfoService;
 
+
     @Autowired
     private LogServiceImpl logService;
+
 
     @PostMapping("/findStu")
     public R FindStu(@RequestHeader("Authorization") String token){
@@ -38,7 +41,7 @@ public class StudentController {
         log.setMsg(LogInfoMsg.SEARCH_STUDENTLIST);
         logService.save(log);
 
-        List<Student> list = studentService.list(null);
+        List<User> list = studentService.list(null);
 
         return R.ok().data("list",list);
     }
@@ -51,7 +54,7 @@ public class StudentController {
         JSONObject jsonObject = JSONObject.parseObject(data);
         Object data1 = jsonObject.get("data");
         Map<String,List<String>> map = JSONObject.parseObject(data1.toString(), Map.class);
-        List<Student> selectTea = studentService.getSelectStu(map);
+        List<User> selectTea = studentService.getSelectStu(map);
         return R.ok().data("list",selectTea);
     }
 

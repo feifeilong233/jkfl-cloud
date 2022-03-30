@@ -35,10 +35,10 @@ public class ExamDetailVo {
      */
     private String[] judgeIds;
 
-    private List<String> iqIds;
+    private List<Long> iqIds;
 
-    private List<String> saqIds;
+    private List<Long> saqIds;
 
-    private List<String> pqIds;
+    private List<Long> pqIds;
 
 }

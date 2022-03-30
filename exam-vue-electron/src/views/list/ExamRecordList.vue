@@ -28,7 +28,7 @@
             </div>
             <div class="list-content-item">
               <span>总分</span>
-              <p>{{ item.examRecord.examJoinScore+item.examRecord.examSubScore }}</p>
+              <p>{{ item.examRecord.examSubScore===-1?'待批阅':(item.examRecord.examJoinScore+item.examRecord.examSubScore) }}</p>
             </div>
           </div>
         </a-list-item>

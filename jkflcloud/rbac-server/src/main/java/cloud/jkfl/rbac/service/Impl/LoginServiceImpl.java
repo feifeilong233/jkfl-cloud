@@ -1,14 +1,11 @@
 package cloud.jkfl.rbac.service.Impl;
 
-import cloud.jkfl.commonutils.JWTUtils;
-import cloud.jkfl.commonutils.R;
-
+import cloud.jkfl.common.utils.JWTUtils;
+import cloud.jkfl.common.utils.R;
 import cloud.jkfl.rbac.mapper.RootMapper;
 import cloud.jkfl.rbac.pojo.Root;
 import cloud.jkfl.rbac.service.LoginService;
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

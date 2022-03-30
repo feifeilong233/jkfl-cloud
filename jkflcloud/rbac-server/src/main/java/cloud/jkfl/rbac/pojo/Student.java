@@ -1,17 +1,24 @@
 package cloud.jkfl.rbac.pojo;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+
+/**
+ * 2022-3-28 断开
+ * */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Student {
 
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableId(value = "stu_id",type = IdType.ASSIGN_ID)
     private Long stuId;
 
@@ -40,6 +47,7 @@ public class Student {
     @TableField(value = "stu_major")
     private String stuMajor;
 
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField(value = "stu_identity_card")
     private Long stuIdentityCard;
 

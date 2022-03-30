@@ -1,7 +1,7 @@
 package cloud.jkfl.rbac.controller;
 
 
-import cloud.jkfl.commonutils.R;
+import cloud.jkfl.common.utils.R;
 import cloud.jkfl.rbac.server.WebSocketServer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestBody;

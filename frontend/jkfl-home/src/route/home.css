@@ -1,0 +1,170 @@
+.jkfl-home-wrapper{
+    width: 100vw;
+    background: #173f4f;
+}
+
+.jkfl-home-header-title{
+    margin: 0;
+    padding-top: 30px;
+    text-align: center;
+    color: #35b9ab;
+
+}
+
+.jkfl-home-content-divider{
+    height: 34vh!important;
+    margin-top: 13vh!important;
+    border: 1px #f9cce2 solid;
+    border-radius: 12px;
+}
+
+.jkfl-home-card{
+    text-align: center;
+    margin-top: 12vh;
+}
+
+.jkfl-card-title{
+    font-weight: bolder;
+    color: #35b9ab;
+}
+
+.jkfl-card-content{
+    font-size:medium;
+    margin-bottom: 0!important;
+    font-weight: lighter;
+    color: #fff;
+}
+
+
+.jkfl-stu-detail-wrapper{
+    height: 50vh;
+    margin-top: 10vh;
+}
+
+.jkfl-stu-detail-card{
+    text-align: center;
+}
+
+.jkfl-admin-wrapper{
+    background: #4bb679;
+    height: 100%;
+}
+
+.jkfl-card-admin-title{
+    color: #fff;
+    font-weight: bolder;
+}
+
+.jkfl-card-admin-context{
+    font-size: x-large;
+    margin-top: 13px;
+    margin-bottom: 0!important;
+}
+
+.jkfl-product-wrapper{
+    height: 100vh;
+    background: #f6f6f6;
+}
+
+.jkfl-product-header-wrapper{
+    margin-top: 15vh;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.jkfl-product-title{
+    font-size: 52px;
+    font-weight: 400;
+    font-family: 'Source Sans Pro',sans-serif;
+}
+.jkfl-product-title-h4{
+    line-height: 1.4em;
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.jkfl-product-ad{
+    display: inline-block;
+    color: #173f4f;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 5px!important;
+    line-height: 1.4em;
+    font-size: 18px;
+}
+.jkfl-product-ad-describe{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-family: 'Source Sans Pro',sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #878787;
+    font-size: 14px;
+}
+
+.jkfl-code-bg{
+    width: 100vw;
+    height: 90vh;
+    z-index: -1;
+    position: fixed;
+}
+
+.jkfl-code-wrapper{
+    height: 80vh;
+    z-index: -1;
+}
+
+.jkfl-wrapper{
+    margin-top: 6vh;
+    overflow-x: hidden;
+    perspective: 3px;
+}
+
+.jkfl-code-title-wrapper{
+    text-align: center;
+}
+
+.jkfl-code-title{
+    color: #fff;
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.jkfl-code-title-h4{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.jkfl-code-card-wrapper{
+    margin-top: 20vh;
+    text-align: center;
+}
+
+.jkfl-code-font{
+    background: transparent;
+    display: block;
+    opacity: 1;
+    color: #173f4f;
+    font-size: 52px;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+
+.jkfl-code-btn-wrapper{
+    width: 100%;
+    text-align: center;
+}

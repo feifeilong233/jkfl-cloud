@@ -1,11 +1,11 @@
 package cloud.jkfl.rbac.service;
 
-import cloud.jkfl.commonutils.R;
-import cloud.jkfl.rbac.pojo.Root;
+
+import cloud.jkfl.common.utils.R;
 
 public interface LoginService{
 
-    public abstract R getLogin(Long tel,String pwd);
+    public abstract R getLogin(Long tel, String pwd);
 
     Long checkToken(String token);
 }

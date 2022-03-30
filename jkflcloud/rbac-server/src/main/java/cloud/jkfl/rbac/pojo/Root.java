@@ -2,6 +2,8 @@ package cloud.jkfl.rbac.pojo;
 
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +16,7 @@ import java.util.Date;
 @TableName(value = "admin", autoResultMap = true)
 public class Root {
 
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableId(value = "admin_id", type = IdType.ASSIGN_ID)
     private Long adminId;
 
@@ -32,6 +35,7 @@ public class Root {
     @TableField(value = "admin_pwd")
     private String adminPwd;
 
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField(value = "admin_identity_card")
     private Long adminIdentityCard;
 

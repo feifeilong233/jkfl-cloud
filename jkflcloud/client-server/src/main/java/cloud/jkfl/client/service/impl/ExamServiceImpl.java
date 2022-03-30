@@ -168,15 +168,15 @@ public class ExamServiceImpl implements ExamService {
         List<PaperManage> iqList = paperManageRepository.findByPaperIdAndPaperQuestionType(exam.getPaperId(),4);
         List<PaperManage> saqList = paperManageRepository.findByPaperIdAndPaperQuestionType(exam.getPaperId(),5);
         List<PaperManage> pqList = paperManageRepository.findByPaperIdAndPaperQuestionType(exam.getPaperId(),6);
-        List<String> iqIds = new ArrayList<>();
-        List<String> saqIds = new ArrayList<>();
-        List<String> pqIds = new ArrayList<>();
+        List<Long> iqIds = new ArrayList<>();
+        List<Long> saqIds = new ArrayList<>();
+        List<Long> pqIds = new ArrayList<>();
         for(PaperManage p : iqList)
-            iqIds.add(String.valueOf(p.getPaperQuestionId()));
+            iqIds.add(p.getPaperQuestionId());
         for(PaperManage p : saqList)
-            saqIds.add(String.valueOf(p.getPaperQuestionId()));
+            saqIds.add(p.getPaperQuestionId());
         for(PaperManage p : pqList)
-            pqIds.add(String.valueOf(p.getPaperQuestionId()));
+            pqIds.add(p.getPaperQuestionId());
         String[] RIds = new String[RatioList.size()];
         String[] CIds = new String[CheckList.size()];
         String[] JIds = new String[JudgeList.size()];
@@ -310,7 +310,7 @@ public class ExamServiceImpl implements ExamService {
         examRecord.setExamJoinerId(userId);
         examRecord.setExamJoinDate(new Date());
         examRecord.setExamJoinScore(totalScore);
-        examRecord.setExamSubScore(0);
+        examRecord.setExamSubScore(-1);
         examRecordRepository.save(examRecord);
         return examRecord;
     }
@@ -426,15 +426,12 @@ public class ExamServiceImpl implements ExamService {
     public List<SubDetailVo> getSubDetail(Long id)
     {
         ExamDetailVo examDetailVo = getExamDetail(id);
-        List<String> iqIds = examDetailVo.getIqIds();
-        List<String> saqIds = examDetailVo.getSaqIds();
-        List<String> pqIds = examDetailVo.getPqIds();
-        List<Long> iqIdList = iqIds.stream().map(s -> Long.parseLong(s.trim())).collect(Collectors.toList());
-        List<Long> saqIdList = saqIds.stream().map(s -> Long.parseLong(s.trim())).collect(Collectors.toList());
-        List<Long> pqIdList = pqIds.stream().map(s -> Long.parseLong(s.trim())).collect(Collectors.toList());
-        List<InputQuestion> iqList = inputQuestionRepository.findAllById(iqIdList);
-        List<ShortAnswerQuestion> saqList = shortAnswerQuestionRepository.findAllById(saqIdList);
-        List<ProgramQuestion> pqList = programQuestionRepository.findAllById(pqIdList);
+        List<Long> iqIds = examDetailVo.getIqIds();
+        List<Long> saqIds = examDetailVo.getSaqIds();
+        List<Long> pqIds = examDetailVo.getPqIds();
+        List<InputQuestion> iqList = inputQuestionRepository.findAllById(iqIds);
+        List<ShortAnswerQuestion> saqList = shortAnswerQuestionRepository.findAllById(saqIds);
+        List<ProgramQuestion> pqList = programQuestionRepository.findAllById(pqIds);
         List<SubDetailVo> subDetailVos = new ArrayList<>();
         for (InputQuestion q : iqList)
         {

@@ -1,13 +1,10 @@
 package cloud.jkfl.rbac.controller;
 
-import cloud.jkfl.commonutils.LogInfoMsg;
-import cloud.jkfl.commonutils.R;
-import cloud.jkfl.rbac.mapper.RootMapper;
+import cloud.jkfl.common.utils.LogInfoMsg;
+import cloud.jkfl.common.utils.R;
 import cloud.jkfl.rbac.pojo.Log;
-import cloud.jkfl.rbac.pojo.Root;
 import cloud.jkfl.rbac.server.WebSocketServer;
 import cloud.jkfl.rbac.service.Impl.LogServiceImpl;
-import cloud.jkfl.rbac.service.Impl.LoginServiceImpl;
 import cloud.jkfl.rbac.service.Impl.RootInfoServiceImpl;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.beans.factory.annotation.Autowired;

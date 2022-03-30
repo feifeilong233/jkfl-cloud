@@ -2,6 +2,12 @@ server:
   port: 8000
 
 spring:
+  application:
+    name: rbac-service
+  cloud:
+    config:
+      discovery:
+        enabled: false
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
@@ -38,4 +44,3 @@ mybatis-plus:
     db-config:
       logic-not-delete-value: 0 # 未删除为 0
       logic-delete-value: 1 # 删了就是 1
-

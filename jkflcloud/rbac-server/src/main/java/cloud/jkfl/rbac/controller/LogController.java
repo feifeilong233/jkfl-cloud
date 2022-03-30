@@ -1,7 +1,7 @@
 package cloud.jkfl.rbac.controller;
 
-import cloud.jkfl.commonutils.LogInfoMsg;
-import cloud.jkfl.commonutils.R;
+import cloud.jkfl.common.utils.LogInfoMsg;
+import cloud.jkfl.common.utils.R;
 import cloud.jkfl.rbac.pojo.Log;
 import cloud.jkfl.rbac.server.WebSocketServer;
 import cloud.jkfl.rbac.service.Impl.LogServiceImpl;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+
 
 @RestController
 @RequestMapping("/back")
@@ -38,6 +39,7 @@ public class LogController {
 
         return R.ok().data("log",allLog);
     }
+
 
     @ApiModelProperty(value = "日志逻辑删除")
     @PostMapping("/dellog")

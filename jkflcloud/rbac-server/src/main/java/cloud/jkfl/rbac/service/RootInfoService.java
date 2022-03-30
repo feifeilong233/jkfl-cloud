@@ -1,6 +1,6 @@
 package cloud.jkfl.rbac.service;
 
-import cloud.jkfl.commonutils.R;
+import cloud.jkfl.common.utils.R;
 import cloud.jkfl.rbac.pojo.Root;
 import com.baomidou.mybatisplus.extension.service.IService;
 
