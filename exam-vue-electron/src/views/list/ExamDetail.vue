@@ -92,9 +92,14 @@
               <a-textarea placeholder="请输入答案" @change="OnInputChange" v-model="inputValue"/>
               <!-- <a-button type="primary" @click="saveAnswer()">保存</a-button>-->
             </div>
-
           </div>
         </a-layout-content>
+        <a-layout-footer :style="{ textAlign: 'center' }">
+          <div class="copyright">
+            Copyright
+            <a-icon type="copyright" /> 2022 <span>jkfl</span>
+          </div>
+        </a-layout-footer>
       </a-layout>
     </a-layout>
   </a-layout>

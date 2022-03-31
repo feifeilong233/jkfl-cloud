@@ -116,6 +116,12 @@
             <p v-html="currentQuestion.description"></p>
           </div>
         </a-layout-content>
+        <a-layout-footer :style="{ textAlign: 'center' }">
+          <div class="copyright">
+            Copyright
+            <a-icon type="copyright" /> 2022 <span>jkfl</span>
+          </div>
+        </a-layout-footer>
       </a-layout>
     </a-layout>
   </a-layout>

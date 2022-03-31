@@ -5,11 +5,11 @@
         <div class="header">
           <a href="/">
             <img src="../assets/logo.svg" class="logo" alt="logo">
-            <span class="title">Online Exam</span>
+            <span class="title">超星好好考</span>
           </a>
         </div>
         <div class="desc">
-          基于SpringBoot+Vue实现的在线考试系统
+          基于SpringBoot+Vue+Electron实现的在线考试系统
         </div>
       </div>
 
