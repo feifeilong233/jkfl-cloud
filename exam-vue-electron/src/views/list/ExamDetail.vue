@@ -8,7 +8,7 @@
         <span style="font-size:15px;">{{ examDetail.exam.examDescription }} </span>
       </span>
       <span style="float: right;">
-        <span style="margin-right: 60px; font-size: 20px" v-if="examDetail.exam">考试限时：{{ examDetail.exam.examTotalTime }}分钟 这里是倒计时</span>
+        <span style="margin-right: 60px; font-size: 20px" v-if="examDetail.exam">考试限时：{{ examDetail.exam.examTotalTime }}分钟 {{ remainingTimeStr }}</span>
         <a-button type="danger" ghost style="margin-right: 60px;" @click="finishExam()">交卷</a-button>
         <a-avatar class="avatar" size="small" :src="avatar()"/>
         <span style="margin-left: 12px">{{ nickname() }}</span>
@@ -119,6 +119,7 @@ export default {
     return {
       // 考试详情对象
       examDetail: {},
+      remainingTime: { hour: 0, minute: 0, second: 0 },
       // 主观题详情对象
       subDetail: {},
       subMap: {},
@@ -154,6 +155,9 @@ export default {
           // 赋值考试对象
           console.log(res)
           that.examDetail = res.data
+          // console.log('@examDetail', this.examDetail)
+          this.initRemainingTime(this.examDetail.exam.examTotalTime)
+          console.log('remainingTime@', that.remainingTime)
           // that.initExam()  // 若考试界面失焦两次则自动交卷
           return res.data
         } else {
@@ -177,6 +181,10 @@ export default {
           })
         }
       })
+    // 开倒计时定时器
+    this.remainingTimer = setInterval(() => {
+      this.remainingTime.second--
+    }, 1000)
   },
   methods: {
     initExam () {
@@ -303,6 +311,7 @@ export default {
                     description: res.msg
                   })
                   this.isFinished = true
+                  clearInterval(this.remainingTimer)
                   this.$router.push('/list/exam-record-list')
                   return res.data
                 } else {
@@ -326,6 +335,36 @@ export default {
             })
           }
         })
+    },
+    initRemainingTime (totalMinute) {
+      this.remainingTime.hour = Math.floor(totalMinute / 60)
+      this.remainingTime.minute = totalMinute % 60
+    }
+  },
+  computed: {
+    // remainingTime: { minute: 0, second: 0 }
+    remainingTimeStr () {
+      const paddingZero = num => num >= 10 ? num : `0${num}`
+
+      const { hour, minute, second } = this.remainingTime
+      console.log('@hour', hour, '@minute', minute, '@second', second)
+      return `${paddingZero(hour)}:${paddingZero(minute)}:${paddingZero(second)}`
+    }
+  },
+  watch: {
+    remainingTime: {
+      handler (newVal, oldVal) {
+        if (newVal.second < 0) {
+          newVal.second = 59
+          newVal.minute--
+        }
+        if (newVal.minute < 0) {
+          newVal.minute = 59
+          newVal.hour--
+        }
+        if (newVal.hour < 0) newVal.hour = 23
+      },
+      deep: true
     }
   }
 }
