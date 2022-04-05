@@ -154,7 +154,7 @@ export default {
           // 赋值考试对象
           console.log(res)
           that.examDetail = res.data
-          that.initExam()
+          // that.initExam()  // 若考试界面失焦两次则自动交卷
           return res.data
         } else {
           this.$notification.error({

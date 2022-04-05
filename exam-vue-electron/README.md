@@ -26,6 +26,15 @@ cd spring-boot-online-exam/frontend/exam
 npm install
 ```
 
+- 执行 electron/install.js
+```
+cd node_modules/electron
+node install.js
+```
+
+- 修复 summernote.js
+将 node_modules/summernote/dist/summernote.js 下的 webpackUniversalModuleDefinition 函数中所有的 jQuery -> jquery
+
 - Compiles and hot-reloads for development
 ```
 npm run serve
