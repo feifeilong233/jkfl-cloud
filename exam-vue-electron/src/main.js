@@ -19,7 +19,10 @@ Vue.use(VueAxios)
 new Vue({
   router,
   store,
-  created () {
+  beforeCreate() {
+    Vue.prototype.$bus = this;
+  },
+  created() {
     bootstrap()
   },
   render: h => h(App)
