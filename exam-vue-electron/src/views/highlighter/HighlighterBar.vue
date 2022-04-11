@@ -2,7 +2,7 @@
   <div>
     <transition name="drawerAnim">
       <div id="my-drawer" v-show="visible">
-        <div id="closeIcon" @click="closeToolDrawer">
+        <div id="closeIcon" @click="closeHighlighterBar">
           <svg
             t="1649241140565"
             class="icon"
@@ -71,7 +71,7 @@ export default {
     }
   },
   methods: {
-    closeToolDrawer() {
+    closeHighlighterBar() {
       this.$emit('changeVisible', false)
     },
     toggleEnable() {

@@ -13,23 +13,23 @@
 <script>
 /* eslint-disable */
 import axios from 'axios'
-import {message} from 'ant-design-vue';
+import { message } from 'ant-design-vue'
 
 export default {
   name: 'Monitor',
   data() {
     return {
       checkInterval: null,
-      checkTimer: 1000,  // 检查摄像头是否开启的定时器 ms
+      checkTimer: 1000, // 检查摄像头是否开启的定时器 ms
       authenticationInterval: null,
-      authenticationTimer: 60000,  // 身份验证的定时器 ms
+      authenticationTimer: 60000, // 身份验证的定时器 ms
       isMonitoring: true,
       canvasDataUrl: '',
     }
   },
   methods: {
     authSuccess() {
-      message.success('身份验证成功');
+      message.success('身份验证成功')
     },
     authFail() {
       message.error('身份验证失败')
@@ -39,7 +39,7 @@ export default {
     },
     authNetFail() {
       message.warning('网络原因导致身份验证失败')
-    }
+    },
   },
   computed: {
     base64Url() {
@@ -58,13 +58,13 @@ export default {
         .then((res) => {
           const { text } = res.data
           if (text !== 'Success') {
-            this.authSuccess();
+            this.authSuccess()
           } else {
-            this.authFail();
+            this.authFail()
           }
         })
         .catch((err) => {
-          this.authNetFail();
+          this.authNetFail()
         })
     },
   },
@@ -105,11 +105,15 @@ export default {
 
     this.authenticationInterval = setInterval(() => {
       // 若未获得摄像头权限
-      if (!this.isMonitoring) return this.authFailExecute();
+      if (!this.isMonitoring) return this.authFailExecute()
 
       canvas.getContext('2d').drawImage(monitor, 0, 0, 250, 160)
       this.canvasDataUrl = canvas.toDataURL('image/png')
     }, this.authenticationTimer)
+  },
+  beforeDestroy() {
+    clearInterval(this.authenticationInterval)
+    clearInterval(this.checkInterval)
   },
 }
 </script>
