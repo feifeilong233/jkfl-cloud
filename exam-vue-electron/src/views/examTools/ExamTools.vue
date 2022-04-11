@@ -101,7 +101,7 @@ export default {
 
 #examTools {
   position: absolute;
-  right: 16px;
+  right: 15.6px;
   top: 50%;
   transform: translate(0, -50%);
   width: @btnGroupWidth;
@@ -128,10 +128,9 @@ export default {
   .toolBtn {
     width: 100%;
     height: 100%;
-
-    background-color: bisque;
+    color: #ffffff;
     cursor: pointer;
-    box-shadow: 0 0 10px #999;
+    box-shadow: 0 0 5px #999;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -140,12 +139,16 @@ export default {
     padding-top: 0.05 * @btnGroupHeight;
     padding-bottom: 0.05 * @btnGroupHeight;
 
+    transition: box-shadow .5s;
+    &:hover {
+      box-shadow: 0 0 10px #666;
+    }
+
     span {
       display: inline-block;
       width: 0.4 * @btnGroupWidth;
       font-size: 0.4 * @btnGroupWidth;
       font-weight: 600;
-      color: #ffffff;
     }
   }
 }
