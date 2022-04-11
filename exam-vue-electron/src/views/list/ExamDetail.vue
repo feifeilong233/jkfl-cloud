@@ -1,6 +1,6 @@
 <template>
   <a-layout>
-    <a-layout-header class="header" style="color: #fff; user-select: none; position: relative;">
+    <a-layout-header class="header" style="color: #fff; user-select: none; position: relative">
       <!--   v-if="examDetail.exam" 是为了防止 异步请求时页面渲染的时候还没有拿到这个值而报错， 下面多处这个判断都是这个道理 -->
       <span style="font-size: 25px; margin-left: 0px" v-if="examDetail.exam">
         <!--        <a-avatar slot="avatar" size="large" shape="circle" :src="examDetail.exam.examAvatar | imgSrcFilter"/>-->
@@ -126,10 +126,10 @@
       <a-layout :style="{ marginLeft: '230px' }">
         <a-layout-content id="questionContent" :style="{ margin: '24px 16px 0', height: '84vh', overflow: 'initial' }">
           <HighlighterBar
-            :visible="drawerDetail.visible"
-            @changeVisible="changeDrawerVisible"
-            :enable="drawerDetail.enable"
-            @changeEnable="changeDrawerEnable"
+            :visible="highlighterBarDetail.visible"
+            :enable="highlighterBarDetail.enable"
+            @changeVisible="changeHighlighterBarVisible"
+            @changeEnable="changeHighlighterBarEnable"
             @changeHighlighterStyle="changeHighlighterStyle"
           />
           <div :style="{ padding: '24px', background: '#fff', height: '84vh' }">
@@ -190,23 +190,14 @@
       </a-layout>
     </a-layout>
 
-    <a-button id="drawerBtn" type="default" @click="showHighlighterBar" title="打开笔记工具">
-      <svg
-        t="1649236621045"
-        class="icon"
-        viewBox="0 0 1024 1024"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        p-id="2897"
-        width="100%"
-        height="100%"
-      >
-        <path
-          d="M957.6 507.4L603.2 158.2c-3.1-3.1-8.1-3.1-11.2 0L353.3 393.4c-3.1 3.1-3.2 8.2-0.1 11.3l0.1 0.1 40 39.4-117.2 115.3c-3.1 3.1-3.2 8.2-0.1 11.3l0.1 0.1 39.5 38.9-189.1 187H72.1c-4.4 0-8.1 3.6-8.1 8V860c0 4.4 3.6 8 8 8h344.9c2.1 0 4.1-0.8 5.6-2.3l76.1-75.6 40.4 39.8c3.1 3.1 8.1 3.1 11.2 0l117.1-115.6 40.1 39.5c3.1 3.1 8.1 3.1 11.2 0l238.7-235.2c3.4-3 3.4-8 0.3-11.2zM389.8 796.2H229.6l134.4-133 80.1 78.9-54.3 54.1z m154.8-62.1L373.2 565.2l68.6-67.6 171.4 168.9-68.6 67.6zM713.1 658L450.3 399.1 597.6 254l262.8 259-147.3 145z"
-          p-id="2898"
-        ></path>
-      </svg>
-    </a-button>
+    <!-- 开启笔记工具框的按钮 -->
+    <HighlighterButton
+      :highlighterBarIsVisible="highlighterBarDetail.visible"
+      @changeHighlighterBarVisible="changeHighlighterBarVisible"
+    />
+
+    <!-- 考试工具开启按钮组 -->
+    <ExamTools />
   </a-layout>
 </template>
 
@@ -214,16 +205,23 @@
 import { getExamDetail, getQuestionDetail, finishExam, getSubDetail, finishSub } from '../../api/exam'
 import UserMenu from '../../components/tools/UserMenu'
 import { mapGetters } from 'vuex'
+// 高亮
 import Highlighter from 'web-highlighter'
 import HighlighterBar from '../highlighter/HighlighterBar'
+import HighlighterButton from '../highlighter/HighlighterButton'
+// 监考
 import Monitor from '../monitor/Monitor'
+// 考试工具
+import ExamTools from '../examTools/ExamTools'
 
 export default {
   name: 'ExamDetail',
   components: {
     UserMenu,
     HighlighterBar,
+    HighlighterButton,
     Monitor,
+    ExamTools,
   },
   data() {
     return {
@@ -235,10 +233,10 @@ export default {
       handInButtonLoading: false,
       // 高亮对象
       highlighter: new Highlighter({
-        // exceptSelectors: ['span']
+        exceptSelectors: ['.ant-message span', '#examTools p'], // 主要防止 antd 的 message 提醒的文本被选中
       }),
       // 抽屉工具箱对象
-      drawerDetail: {
+      highlighterBarDetail: {
         visible: false,
         enable: false,
       },
@@ -444,6 +442,7 @@ export default {
                 description: res.msg,
               })
               this.isFinished = true
+              // 清除定时器
               clearInterval(this.remainingTimer)
               this.$router.push('/list/exam-record-list')
               return res.data
@@ -478,17 +477,17 @@ export default {
     /**
      * 高亮工具箱
      */
-    showHighlighterBar() {
-      this.drawerDetail.visible = true
+    // showHighlighterBar(isVisible) {
+    //   this.highlighterBarDetail.visible = isVisible
+    // },
+    // closeHighlighterBar() {
+    //   this.highlighterBarDetail.visible = false
+    // },
+    changeHighlighterBarVisible(value) {
+      this.highlighterBarDetail.visible = value
     },
-    closeHighlighterBar() {
-      this.drawerDetail.visible = false
-    },
-    changeDrawerVisible(value) {
-      this.drawerDetail.visible = value
-    },
-    changeDrawerEnable() {
-      this.drawerDetail.enable = !this.drawerDetail.enable
+    changeHighlighterBarEnable() {
+      this.highlighterBarDetail.enable = !this.highlighterBarDetail.enable
     },
     changeHighlighterStyle(className) {
       this.highlighter.painter.options.className = className
@@ -506,19 +505,27 @@ export default {
   watch: {
     remainingTime: {
       handler(newVal, oldVal) {
-        if (newVal.second < 0) {
+        const { hour, minute, second } = newVal
+
+        if (hour == 0 && minute == 0 && second == 0) {
+          return this.finishExam()
+        }
+
+        if (second < 0) {
           newVal.second = 59
           newVal.minute--
         }
-        if (newVal.minute < 0) {
+        if (minute < 0) {
           newVal.minute = 59
           newVal.hour--
         }
-        if (newVal.hour < 0) newVal.hour = 23
+        if (hour < 0) {
+          newVal.hour = 23
+        }
       },
       deep: true,
     },
-    drawerDetail: {
+    highlighterBarDetail: {
       handler(newVal, oldVal) {
         if (!this.highlighter) return
 
@@ -533,8 +540,11 @@ export default {
     },
   },
   beforeRouteLeave(to, from, next) {
-    this.drawerDetail.enable = false
+    this.highlighterBarDetail.enable = false
     next()
+  },
+  beforeDestroy() {
+    clearInterval(this.remainingTimer)
   },
 }
 </script>
@@ -542,19 +552,6 @@ export default {
 <style>
 /* 引入高亮样式 */
 @import '../highlighter/highlighterStyles.less';
-
-.my-highlight {
-  background-color: skyblue;
-}
-
-#drawerBtn {
-  position: absolute;
-  right: 100px;
-  bottom: 100px;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-}
 
 #monitor {
   height: inherit;
