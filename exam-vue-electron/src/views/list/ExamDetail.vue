@@ -1,17 +1,20 @@
 <template>
   <a-layout>
-    <a-layout-header class="header" style="color: #fff; user-select: none">
+    <a-layout-header class="header" style="color: #fff; user-select: none; position: relative;">
       <!--   v-if="examDetail.exam" 是为了防止 异步请求时页面渲染的时候还没有拿到这个值而报错， 下面多处这个判断都是这个道理 -->
       <span style="font-size: 25px; margin-left: 0px" v-if="examDetail.exam">
         <!--        <a-avatar slot="avatar" size="large" shape="circle" :src="examDetail.exam.examAvatar | imgSrcFilter"/>-->
         {{ examDetail.exam.examSource }}
         <span style="font-size: 15px">{{ examDetail.exam.examDescription }} </span>
       </span>
+      <div id="monitor">
+        <Monitor />
+      </div>
       <span style="float: right">
-        <span style="margin-right: 60px; font-size: 20px;" v-if="examDetail.exam"
+        <span style="margin-right: 60px; font-size: 20px" v-if="examDetail.exam"
           >考试限时：{{ examDetail.exam.examTotalTime }}分钟 {{ remainingTimeStr }}</span
         >
-        <a-button type="danger" ghost style="margin-right: 60px;" @click="finishExam()" :loading="handInButtonLoading"
+        <a-button type="danger" ghost style="margin-right: 60px" @click="finishExam()" :loading="handInButtonLoading"
           >交卷</a-button
         >
         <a-avatar class="avatar" size="small" :src="avatar()" />
@@ -32,34 +35,49 @@
           :style="{ height: '100%', borderRight: 0 }"
         >
           <a-sub-menu key="question_radio">
-            <span slot="title" v-if="examDetail.exam" style="user-select: none;"
+            <span slot="title" v-if="examDetail.exam" style="user-select: none"
               ><a-icon type="check-circle" theme="twoTone" />单选题(每题{{ currentQuestion.sqScore }}分)</span
             >
-            <a-menu-item v-for="(item, index) in examDetail.radioIds" :key="item" @click="getQuestionDetail(item, 1)" style="user-select: none;">
+            <a-menu-item
+              v-for="(item, index) in examDetail.radioIds"
+              :key="item"
+              @click="getQuestionDetail(item, 1)"
+              style="user-select: none"
+            >
               <a-icon type="eye" theme="twoTone" twoToneColor="#52c41a" v-if="answersMap.get(item)" />
               题目{{ index + 1 }}
             </a-menu-item>
           </a-sub-menu>
           <a-sub-menu key="question_check">
-            <span slot="title" v-if="examDetail.exam" style="user-select: none;"
+            <span slot="title" v-if="examDetail.exam" style="user-select: none"
               ><a-icon type="check-square" theme="twoTone" />多选题(每题{{ currentQuestion.mqScore }}分)</span
             >
-            <a-menu-item v-for="(item, index) in examDetail.checkIds" :key="item" @click="getQuestionDetail(item, 2)" style="user-select: none;">
+            <a-menu-item
+              v-for="(item, index) in examDetail.checkIds"
+              :key="item"
+              @click="getQuestionDetail(item, 2)"
+              style="user-select: none"
+            >
               <a-icon type="eye" theme="twoTone" twoToneColor="#52c41a" v-if="answersMap.get(item)" />
               题目{{ index + 1 }}
             </a-menu-item>
           </a-sub-menu>
           <a-sub-menu key="question_judge">
-            <span slot="title" v-if="examDetail.exam" style="user-select: none;"
+            <span slot="title" v-if="examDetail.exam" style="user-select: none"
               ><a-icon type="like" theme="twoTone" />判断题(每题{{ currentQuestion.jqScore }}分)</span
             >
-            <a-menu-item v-for="(item, index) in examDetail.judgeIds" :key="item" @click="getQuestionDetail(item, 3)" style="user-select: none;">
+            <a-menu-item
+              v-for="(item, index) in examDetail.judgeIds"
+              :key="item"
+              @click="getQuestionDetail(item, 3)"
+              style="user-select: none"
+            >
               <a-icon type="eye" theme="twoTone" twoToneColor="#52c41a" v-if="answersMap.get(item)" />
               题目{{ index + 1 }}
             </a-menu-item>
           </a-sub-menu>
           <a-sub-menu key="question_input">
-            <span slot="title" v-if="examDetail.exam" style="user-select: none;"
+            <span slot="title" v-if="examDetail.exam" style="user-select: none"
               ><a-icon type="eye" theme="twoTone" />填空题(每题{{ currentQuestion.iqScore }}分)</span
             >
             <a-menu-item
@@ -67,14 +85,14 @@
               :key="index"
               v-if="item.type === '填空题'"
               @click="getSubDetail(item)"
-              style="user-select: none;"
+              style="user-select: none"
             >
               <a-icon type="eye" theme="twoTone" twoToneColor="#52c41a" v-if="subMap.get(item.id)" />
               题目{{ index + 1 }}
             </a-menu-item>
           </a-sub-menu>
           <a-sub-menu key="question_short_answer">
-            <span slot="title" v-if="examDetail.exam" style="user-select: none;"
+            <span slot="title" v-if="examDetail.exam" style="user-select: none"
               ><a-icon type="eye" theme="twoTone" />简答题(每题{{ currentQuestion.saqScore }}分)</span
             >
             <a-menu-item
@@ -82,14 +100,14 @@
               :key="index"
               v-if="item.type === '简答题'"
               @click="getSubDetail(item)"
-              style="user-select: none;"
+              style="user-select: none"
             >
               <a-icon type="eye" theme="twoTone" twoToneColor="#52c41a" v-if="subMap.get(item.id)" />
               题目{{ index + 1 }}
             </a-menu-item>
           </a-sub-menu>
           <a-sub-menu key="question_program">
-            <span slot="title" v-if="examDetail.exam" style="user-select: none;"
+            <span slot="title" v-if="examDetail.exam" style="user-select: none"
               ><a-icon type="eye" theme="twoTone" />程序题(每题{{ currentQuestion.pqScore }}分)</span
             >
             <a-menu-item
@@ -97,7 +115,7 @@
               :key="index"
               v-if="item.type === '程序题'"
               @click="getSubDetail(item)"
-              style="user-select: none;"
+              style="user-select: none"
             >
               <a-icon type="eye" theme="twoTone" twoToneColor="#52c41a" v-if="subMap.get(item.id)" />
               题目{{ index + 1 }}
@@ -115,10 +133,10 @@
             @changeHighlighterStyle="changeHighlighterStyle"
           />
           <div :style="{ padding: '24px', background: '#fff', height: '84vh' }">
-            <span v-show="currentQuestion === ''" style="font-size: 30px; font-family: Consolas; user-select: none;"
+            <span v-show="currentQuestion === ''" style="font-size: 30px; font-family: Consolas; user-select: none"
               >欢迎参加考试，请点击左侧题目编号开始答题</span
             >
-            <strong style="user-select: none;">{{ currentQuestion.type }} </strong>
+            <strong style="user-select: none">{{ currentQuestion.type }} </strong>
             <p v-html="currentQuestion.name"></p>
             <!-- 单选题和判断题 -->
             <!-- key不重复只需要在一个for循环中保证即可 -->
@@ -126,7 +144,7 @@
               @change="onRadioChange"
               v-model="radioValue"
               v-if="currentQuestion.type === '单选题' || currentQuestion.type === '判断题'"
-              style="user-select: none;"
+              style="user-select: none"
             >
               <a-radio
                 v-for="option in currentQuestion.options"
@@ -164,7 +182,7 @@
           </div>
         </a-layout-content>
         <a-layout-footer :style="{ textAlign: 'center' }">
-          <div class="copyright">
+          <div class="copyright" style="user-select: none">
             Copyright
             <a-icon type="copyright" /> 2022 <span>jkfl</span>
           </div>
@@ -198,12 +216,14 @@ import UserMenu from '../../components/tools/UserMenu'
 import { mapGetters } from 'vuex'
 import Highlighter from 'web-highlighter'
 import HighlighterBar from '../highlighter/HighlighterBar'
+import Monitor from '../monitor/Monitor'
 
 export default {
   name: 'ExamDetail',
   components: {
     UserMenu,
     HighlighterBar,
+    Monitor,
   },
   data() {
     return {
@@ -215,7 +235,7 @@ export default {
       handInButtonLoading: false,
       // 高亮对象
       highlighter: new Highlighter({
-        // exceptSelectors: []
+        // exceptSelectors: ['span']
       }),
       // 抽屉工具箱对象
       drawerDetail: {
@@ -298,6 +318,8 @@ export default {
     // })
     // getRemoteData().then(s => highlighter.fromStore(s.startMeta, s.endMeta, s.id, s.text))
     // highlighter.on(Highlighter.event.CREATE, ({sources}) => save(sources))
+
+    // 开启摄像头
   },
   methods: {
     initExam() {
@@ -518,6 +540,7 @@ export default {
 </script>
 
 <style>
+/* 引入高亮样式 */
 @import '../highlighter/highlighterStyles.less';
 
 .my-highlight {
@@ -531,5 +554,15 @@ export default {
   border-radius: 50%;
   width: 60px;
   height: 60px;
+}
+
+#monitor {
+  height: inherit;
+  width: 100px;
+  position: absolute;
+  z-index: 99;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 </style>

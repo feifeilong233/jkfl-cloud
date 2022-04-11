@@ -20,7 +20,7 @@
           </svg>
         </div>
 
-        <div class="container">
+        <div class="container" style="user-select: none">
           选中高亮：
           <a-switch :checked="enable" @change="toggleEnable" />
           <a-divider orientation="left">调色板</a-divider>
