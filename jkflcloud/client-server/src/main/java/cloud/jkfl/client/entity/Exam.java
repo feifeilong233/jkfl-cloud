@@ -34,6 +34,7 @@ public class Exam {
     @ApiModelProperty("外键，试卷表的id")
     private Long paperId;
     @ApiModelProperty(value = "考试日期，不是创建修改日期，需要手动添加！")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date examDate;
     @ApiModelProperty(value = "考试总时间， int类型， 小于三位！")
     private Integer examTotalTime;

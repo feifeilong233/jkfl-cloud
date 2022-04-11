@@ -5,7 +5,7 @@ import {getJwtToken} from "../lib/utils";
 import axios from "axios";
 const treeData = [
     {
-        title: '江南大学',
+        title: '火星大学',
         key: '0',
         id:"1",
         pid:"0",

@@ -5,10 +5,13 @@
       :dataSource="dataSource"
     >
       <a-list-item slot="renderItem" slot-scope="item">
-        <a-card :hoverable="true" @click="joinExam(item.id)">
+        <a-card :hoverable="true" @click="joinExam(item.id, item.date, item.elapse)">
           <a-card-meta>
             <div style="margin-bottom: 3px" slot="title">{{ item.title }}</div>
-            <div class="meta-content" slot="description">{{ item.content }}</div>
+            <div class="meta-content" slot="description">
+              <p>{{ item.content }}</p>
+              <p>开始时间：{{ item.date }}</p>
+            </div>
           </a-card-meta>
           <template class="ant-card-actions" slot="actions">
             <a>满分：{{ item.score }}分</a>
@@ -21,7 +24,7 @@
 </template>
 
 <script>
-import { getExamCardList } from '../../api/exam'
+import { getExamCardList, getExamRecordList } from '../../api/exam'
 
 export default {
   name: 'ExamCardList',
@@ -29,15 +32,31 @@ export default {
     return {
       description: '您可以随意点击下面的考试卡片开始一场属于您的考试',
       extraImage: 'https://gw.alipayobjects.com/zos/rmsportal/RzwpdLnhmvDJToTdfDPe.png',
-      dataSource: []
+      dataSource: [],
+      record: {}
     }
   },
   methods: {
-    joinExam (id) {
-      const routeUrl = this.$router.resolve({
-        path: `/exam/${id}`
-      })
-      window.open(routeUrl.href, '_blank')
+    joinExam (id, date, elapse) {
+      const newDate = new Date()
+      if (Date.parse(date) < newDate && Date.parse(date) + elapse * 60 * 1000 > newDate) {
+        for (const ex in this.record) {
+          if (id === this.record[ex].examId) {
+            this.$notification.error({
+              message: '您已参加过本场考试！不可重复参加！'
+            })
+          } else {
+            const routeUrl = this.$router.resolve({
+              path: `/exam/${id}`
+            })
+            window.open(routeUrl.href, '_blank')
+          }
+        }
+      } else {
+        this.$notification.error({
+          message: '未在考试时间！进入考试失败！'
+        })
+      }
     }
   },
   mounted () {
@@ -56,6 +75,23 @@ export default {
       // 失败就弹出警告消息
       this.$notification.error({
         message: '获取考试列表失败',
+        description: err.message
+      })
+    })
+    getExamRecordList().then(res => {
+      console.log(res)
+      if (res.code === 0) {
+        this.record = res.data
+      } else {
+        this.$notification.error({
+          message: '获取考试记录失败',
+          description: res.msg
+        })
+      }
+    }).catch(err => {
+      // 失败就弹出警告消息
+      this.$notification.error({
+        message: '获取考试记录失败',
         description: err.message
       })
     })

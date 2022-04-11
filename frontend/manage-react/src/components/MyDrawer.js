@@ -52,7 +52,7 @@ class MyDrawer extends Component {
                         <Descriptions.Item label="电话">{user.adminTel}</Descriptions.Item>
                         <Descriptions.Item label="邮箱">{user.adminEmail}</Descriptions.Item>
                         <Descriptions.Item label="地址">
-                            臭寄吧江南大学
+                            火星大学
                         </Descriptions.Item>
                         <Descriptions.Item label="权限">管理员</Descriptions.Item>
                         <Descriptions.Item label="部门">运维</Descriptions.Item>

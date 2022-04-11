@@ -35,7 +35,7 @@ const menuList = [
         ]
     },
     {   key:'sub3',
-        title:"系统管理",
+        title:"后台管理",
         icon: <SettingOutlined />,
         children:[
             {key:8,title:"服务器状态",path:"/back/sysstatus"},

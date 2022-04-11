@@ -5,7 +5,7 @@
         <div class="header">
           <a href="/">
             <img src="../assets/logo.svg" class="logo" alt="logo">
-            <span class="title">超星好好考</span>
+            <span class="title">JKFL Online Exam</span>
           </a>
         </div>
         <div class="desc">

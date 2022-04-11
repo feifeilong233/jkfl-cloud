@@ -20,7 +20,7 @@ import HeaderBar from './header_bar'
 import Homepage from './homepage/index.js'
 
 //题库管理
-import QCheckin from './q_checkin/index.js';
+import QCheckin from './q_checkin/q_manage.js';
 import QueryQuestion from "./q_checkin/query_question";
 
 //试卷管理
@@ -149,23 +149,24 @@ class Main extends React.Component {
 	}
 
 	render(){
-		//动态渲染科目信息
-		let subjectArr = [];
-		this.state.subjectArr.forEach((item)=>{
-			subjectArr.push(
-				<MenuItemGroup key={"subject"+item.subjectid} title={item.subjectname}>
-					<Menu.Item key={item.subjectid+"_1"}><Link to={"/main/q_checkin/"+item.subjectid+"/1"}>初级</Link></Menu.Item>
-					<Menu.Item key={item.subjectid+"_2"}><Link to={"/main/q_checkin/"+item.subjectid+"/2"}>中级</Link></Menu.Item>
-					<Menu.Item key={item.subjectid+"_3"}><Link to={"/main/q_checkin/"+item.subjectid+"/3"}>高级</Link></Menu.Item>
-				</MenuItemGroup>
-			)
-		})
+		// 动态渲染科目信息
+		// let subjectArr = [];
+		// this.state.subjectArr.forEach((item)=>{
+		// 	subjectArr.push(
+		// 		<MenuItemGroup key={"subject"+item.subjectid} title={item.subjectname}>
+		// 			<Menu.Item key={item.subjectid+"_1"}><Link to={"/main/q_checkin/"+item.subjectid+"/1"}>初级</Link></Menu.Item>
+		// 			<Menu.Item key={item.subjectid+"_2"}><Link to={"/main/q_checkin/"+item.subjectid+"/2"}>中级</Link></Menu.Item>
+		// 			<Menu.Item key={item.subjectid+"_3"}><Link to={"/main/q_checkin/"+item.subjectid+"/3"}>高级</Link></Menu.Item>
+		// 		</MenuItemGroup>
+		// 	)
+		// })
 
 		return(
 			<div>
 				<div id="leftMenu">
 					{/* <img className="logo" src="/sxt_exam/lqw/images/logo.jpg"/> */}
-					<img className="logo" src={require("@assets/images/logo.jpg")}/>
+					<img className="logo" src={require("@assets/images/logo.png")}/>
+					<span className="title">JKFL Online Exam</span>
 					<div>
 						<Layout>
 								<Menu
@@ -184,14 +185,17 @@ class Main extends React.Component {
 									</Menu.Item>
 									<SubMenu key="q_manage" title={<span><Icon type="form" /><span>题库管理</span></span>}>
 										<SubMenu key="q_checkin" title={<span>试题录入</span>}>
-											{subjectArr}
+											{/*{subjectArr}*/}
+											<Menu.Item key={"q_checkin1"}><Link to={"/main/q_checkin/q_manage/1"}>初级</Link></Menu.Item>
+											<Menu.Item key={"q_checkin2"}><Link to={"/main/q_checkin/q_manage/2"}>中级</Link></Menu.Item>
+											<Menu.Item key={"q_checkin3"}><Link to={"/main/q_checkin/q_manage/3"}>高级</Link></Menu.Item>
 										</SubMenu>
 										<Menu.Item key="questions_manage"><Link to="/main/q_checkin/query_question">试题管理</Link></Menu.Item>
 									</SubMenu>
 									<SubMenu key="p_manage" title={<span><Icon type="profile" /><span>试卷管理</span></span>}>
 										<Menu.Item key="p_manage"><Link to="/main/p_manage/add_paper">出卷</Link></Menu.Item>
 										<Menu.Item key='manual_paper'><Link to='/main/p_manage/manual_paper'>手动出卷</Link></Menu.Item>
-										<Menu.Item key="manage_paper"><Link to="/main/p_manage/query_paper">试卷管理</Link></Menu.Item>
+										<Menu.Item key="manage_paper"><Link to="/main/p_manage/query_paper">我的试卷</Link></Menu.Item>
 									</SubMenu>
 									<Menu.Item key="score_search">
 										<Link to="/main/score_search">
@@ -205,7 +209,7 @@ class Main extends React.Component {
 									</SubMenu>
 									<SubMenu key="paper_manage" title={<span><Icon type="desktop" /><span>考试管理</span></span>}>
 										<Menu.Item key="manage_exam"><Link to="/main/paper_manage/create_exam">创建考试</Link></Menu.Item>
-										<Menu.Item key="scoring"><Link to="/main/paper_manage/scoring">考试管理</Link></Menu.Item>
+										<Menu.Item key="scoring"><Link to="/main/paper_manage/scoring">我的考试</Link></Menu.Item>
 										<Menu.Item key="exam_look"><Link to="/main/paper_manage/exam_look">监考</Link></Menu.Item>
 									</SubMenu>
 									<SubMenu key="personal_center" title={<span><Icon type="user" /><span>个人中心</span></span>}>
@@ -223,7 +227,7 @@ class Main extends React.Component {
 							<Route path="/main/homepage" component={Homepage}/>
 
 							{/* 题库管理 */}
-							<Route path="/main/q_checkin/:type/:level" component={QCheckin}/>
+							<Route path="/main/q_checkin/q_manage/:level" component={QCheckin}/>
 							<Route path="/main/q_checkin/query_question" component={QueryQuestion}/>
 
 							<Route path="/main/p_manage/add_paper" component={ChooseQuestions}/>

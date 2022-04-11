@@ -65,7 +65,7 @@ module.exports = {
             options: {
               sourceMap: true,
               modifyVars: {
-                '@primary-color': '#f47983',
+                // '@primary-color': '#f47983',
                 '@border-radius-base': '5px',
               },
               javascriptEnabled: true,
