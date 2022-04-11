@@ -1,6 +1,7 @@
 <template>
   <a-layout :class="['layout', device]">
     <!-- SideMenu -->
+    <!-- 移动端出现侧边栏抽屉 -->
     <a-drawer
       v-if="isMobile()"
       placement="left"

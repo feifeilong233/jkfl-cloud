@@ -2,6 +2,10 @@
 import { UserLayout, BasicLayout, RouteView, BlankLayout, PageView } from '../layouts'
 import { examList } from '../core/icons'
 
+/*
+  动态路由
+    在侧边栏中显示
+*/
 export const asyncRouterMap = [
 
   {
@@ -10,8 +14,8 @@ export const asyncRouterMap = [
     component: BasicLayout,
     meta: { title: '在线考试系统' },
     redirect: '/list/exam-record-list',
-    children: [
-      {
+    children: [ // 侧边栏子选项
+      { // 考试卡片
         path: '/exam-card',
         name: 'exam-card',
         redirect: '/list/exam-card',
@@ -28,7 +32,7 @@ export const asyncRouterMap = [
         ]
       },
       // list
-      {
+      { // 我的考试
         path: '/exam-record-list',
         name: 'exam-record-list',
         redirect: '/list/exam-record-list',
@@ -44,6 +48,22 @@ export const asyncRouterMap = [
           }
         ]
       },
+      /* { // 笔记本
+        path: '/notebook',
+        name: 'notebook',
+        redirect: '/list/notebook',
+        component: PageView,
+        hideChildrenInMenu: true,
+        meta: { title: '笔记本', keepAlive: true, icon: 'user', permission: ['notebook'] },
+        children: [
+          {
+            path: '/list/notebook',
+            name: 'ExamRecordList',
+            component: () => import('../views/list/ExamRecordList'),
+            meta: { title: '笔记本', keepAlive: true, permission: ['notebook'] }
+          }
+        ]
+      }, */
       // account
       {
         path: '/account',
