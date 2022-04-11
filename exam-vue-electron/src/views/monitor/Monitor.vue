@@ -11,6 +11,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import axios from 'axios'
 import {message} from 'ant-design-vue';
 
