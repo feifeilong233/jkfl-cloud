@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable -->
   <a-layout>
     <a-layout-header class="header" style="color: #fff; user-select: none; position: relative;">
       <!--   v-if="examDetail.exam" 是为了防止 异步请求时页面渲染的时候还没有拿到这个值而报错， 下面多处这个判断都是这个道理 -->
@@ -211,6 +212,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import { getExamDetail, getQuestionDetail, finishExam, getSubDetail, finishSub } from '../../api/exam'
 import UserMenu from '../../components/tools/UserMenu'
 import { mapGetters } from 'vuex'
@@ -286,7 +288,7 @@ export default {
         console.log('@examDetail', this.examDetail)
         this.initRemainingTime(this.examDetail.exam.examTotalTime)
         console.log('remainingTime@', that.remainingTime)
-        // that.initExam()  // 若考试界面失焦两次则自动交卷
+        that.initExam()  // 若考试界面失焦两次则自动交卷
         return res.data
       } else {
         this.$notification.error({
