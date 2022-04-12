@@ -100,7 +100,7 @@ export default {
   height: @drawer-height;
   // border: 1px solid #aaa;
   position: absolute;
-  right: 33px;
+  right: 70px;
   top: 50%;
   border-radius: 20px;
   box-shadow: #bbb 0px 0px 10px;
