@@ -33,7 +33,7 @@ const treeData = [
         ],
     },
     {
-        title:'江北大学',
+        title:'不知道起啥名学院',
         key: '1',
         id:"2",
         pid:'0',

@@ -31,30 +31,6 @@ class QCheckin extends React.Component {
     this.state.pathList = [];
     this.state.pathList.push('试题录入');
 
-    //判断状态管理是否有值（subjectArr是否有值）
-    if(myProps.subjectinfo.subjectArr) {
-      myProps.subjectinfo.subjectArr.some((item)=>{
-        if(myProps.match.params.type == item.subjectid) {
-          this.state.pathList.push(item.subjectname);
-
-          //获取知识点
-          axios.post('http://localhost:8013/exam/knowledge_point',{},{
-            headers:{
-              "Authorization":getJwtToken()
-            }
-          }).then(response=>{
-            const {data} = response.data.data;
-            //console.log(data);
-            this.state.knowledgePoint = data;
-            this.setState({knowledgePoint:this.state.knowledgePoint});
-          })
-
-          return true;
-        }
-        return false;
-      })
-    }
-
     switch(myProps.match.params.level) {
       case '1' :
         this.state.pathList.push('初级');
@@ -73,6 +49,18 @@ class QCheckin extends React.Component {
 
   componentWillMount(){
     this.setPathList(this.props);//更新面包屑
+
+    //获取知识点
+    axios.post('http://localhost:8013/exam/knowledge_point',{},{
+      headers:{
+        "Authorization":getJwtToken()
+      }
+    }).then(response=>{
+      const {data} = response.data.data;
+      console.log('k',data);
+      this.state.knowledgePoint = data;
+      this.setState({knowledgePoint:this.state.knowledgePoint});
+    })
 
     if(sessionStorage.getItem("q_checkin_type")) {
       //设置选项卡的题目的类型

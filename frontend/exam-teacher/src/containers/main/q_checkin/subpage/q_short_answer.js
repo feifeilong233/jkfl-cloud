@@ -203,7 +203,7 @@ class QShortAnswer extends React.Component {
     return(
       <div>
 
-        <div style={{display:'flex'}}>
+        <div style={{display:'flex', width: '20vw'}}>
           <Button type="primary" size='default' onClick={this.bindDownloadClick.bind(this)}>
             下载模板
           </Button>
