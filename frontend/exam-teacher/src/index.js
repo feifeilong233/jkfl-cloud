@@ -13,13 +13,13 @@ const store = configureStore()
 
 ReactDOM.render((
 	<Provider store={store}>
-		<BrowserRouter>
+		<HashRouter>
 			<div>
 				<Switch>
 					<Route path="/login" component={login}/>
 					<Route path="/main" component={main}/>
 				</Switch>
 			</div>
-		</BrowserRouter>
+		</HashRouter>
 	</Provider>
 ),document.getElementById('app'));

@@ -4,10 +4,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, './src/add_paper.js'),
+    app: path.resolve(__dirname, './src/index.js'),
     // 将 第三方依赖 单独打包
     vendor: [
       'react',
@@ -58,7 +59,7 @@ module.exports = {
         })
       }, {
         test: /\.css$/,
-        // exclude: /node_modules/, 删掉次行  不然打包会报错  因为antd.css 在node_modules中
+        // exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader', 'postcss-loader']
@@ -82,12 +83,29 @@ module.exports = {
             outputPath: 'font/'
           }
         }
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          },
+          {
+            loader: "less-loader",
+            options: {
+              sourceMap: true,
+              javascriptEnabled: true,
+            }
+          }]
       }
     ]
   },
   plugins: [
     // webpack 内置的 banner-plugin
-    new webpack.BannerPlugin("Copyright by 765745342@qq.com"),
+    new webpack.BannerPlugin("Copyright by jkfl"),
 
     // html 模板插件
     new HtmlWebpackPlugin({
@@ -104,13 +122,6 @@ module.exports = {
     // 为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID
     new webpack.optimize.OccurrenceOrderPlugin(),
 
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        //supresses warnings, usually from module minification
-        warnings: false
-      }
-    }),
-
     // 分离CSS和JS文件
     new ExtractTextPlugin('css/[name].[chunkhash:8].css'),
 
@@ -126,6 +137,6 @@ module.exports = {
       cssProcessor: require('cssnano'),
       cssProcessorOptions: { discardComments: {removeAll: true } },
       canPrint: true
-    })
+    }),
   ]
 }

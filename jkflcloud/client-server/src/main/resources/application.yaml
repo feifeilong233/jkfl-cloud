@@ -3,9 +3,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: mazi926*
-    url: jdbc:mysql://localhost:3306/jkfl?serverTimezone=GMT%2B8
+    username: jkfl
+    password: mazi926
+    url: jdbc:mysql://127.0.0.1:3306/jkfl?serverTimezone=GMT%2B8
     hikari:
       #连接池名
       pool-name: DateHikariCP

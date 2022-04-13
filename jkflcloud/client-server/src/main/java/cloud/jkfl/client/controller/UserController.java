@@ -31,6 +31,7 @@ public class UserController {
 
     @PostMapping("/register")
     @ApiOperation("注册")
+    @CrossOrigin
     ResultVO<User> register(@RequestBody RegisterDTO registerDTO) {
         ResultVO<User> resultVO;
         // 注册信息的完善，还有唯一性校验没(用户名、邮箱和手机号)已经在user表中通过unique来设置了
@@ -46,6 +47,7 @@ public class UserController {
 
     @PostMapping("/login")
     @ApiOperation("根据用户名或邮箱登录,登录成功返回token")
+    @CrossOrigin
     ResultVO<String> login(@RequestBody LoginQo loginQo) { // 这里不用手机号是因为手机号和用户名难以进行格式区分
         // 用户登录
         ResultVO<String> resultVO;
@@ -62,6 +64,7 @@ public class UserController {
 
     @GetMapping("/user-info")
     @ApiOperation("获取用户信息")
+    @CrossOrigin
     ResultVO<UserVo> getUserInfo(HttpServletRequest request) {
         String userId = (String) request.getAttribute("user_id");
         UserVo userVo = userService.getUserInfo(userId);
@@ -70,6 +73,7 @@ public class UserController {
 
     @GetMapping("/info")
     @ApiOperation("获取用户的详细信息，包括个人信息页面和操作权限")
+    @CrossOrigin
     ResultVO<UserInfoVo> getInfo(HttpServletRequest request) {
         System.out.println("进入/user/info的获取用户信息的接口");
         String userId = (String) request.getAttribute("user_id");
@@ -80,6 +84,7 @@ public class UserController {
 
     @GetMapping("/test")
     @ApiOperation("测试接口")
+    @CrossOrigin
     String test(HttpServletRequest request) {
         // 下面这两个属性都是登录拦截器从token中解析地，当用户名不对或者token过期时是走不到接口内的
         String userId = (String) request.getAttribute("user_id");

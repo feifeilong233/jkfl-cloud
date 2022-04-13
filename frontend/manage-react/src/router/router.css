@@ -5,3 +5,7 @@
 .xi-on-sider-box{
     min-height: 100vh;
 }
+
+.login {
+    background-image: url("/public/login-bg-small.jpg");
+}

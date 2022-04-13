@@ -29,6 +29,7 @@ public class ExamController {
 
     @GetMapping("/question/detail/{type}/{id}")
     @ApiOperation("根据问题的id获取问题的详细信息")
+    @CrossOrigin
     ResultVO<QuestionDetailVo> getQuestionDetail(@PathVariable Long id, @PathVariable Integer type) {
         //  根据问题id获取问题的详细信息
         ResultVO<QuestionDetailVo> resultVO;
@@ -44,6 +45,7 @@ public class ExamController {
 
     @GetMapping("/all")
     @ApiOperation("获取全部考试的列表")
+    @CrossOrigin
     ResultVO<List<ExamVo>> getExamAll() {
         // 需要拼接前端需要的考试列表对象
         ResultVO<List<ExamVo>> resultVO;
@@ -59,6 +61,7 @@ public class ExamController {
 
     @GetMapping("/card/list")
     @ApiOperation("获取考试列表，适配前端卡片列表")
+    @CrossOrigin
     ResultVO<List<ExamCardVo>> getExamCardList() {
         // 获取考试列表卡片
         ResultVO<List<ExamCardVo>> resultVO;
@@ -74,6 +77,7 @@ public class ExamController {
 
     @GetMapping("/detail/{id}")
     @ApiOperation("根据考试的id，获取考试详情")
+    @CrossOrigin
     ResultVO<ExamDetailVo> getExamDetail(@PathVariable Long id) {
         // 根据id获取考试详情
         ResultVO<ExamDetailVo> resultVO;
@@ -88,6 +92,7 @@ public class ExamController {
 
     @PostMapping("/finish/sub/{recordId}")
     @ApiOperation("保存主观题答案")
+    @CrossOrigin
     ResultVO<String> finishSub(@PathVariable String recordId, @RequestBody HashMap<Long, SubDetailVo> subMap, HttpServletRequest request) {
         try {
             // 拦截器里设置上的用户id
@@ -102,6 +107,7 @@ public class ExamController {
 
     @PostMapping("/finish/{examId}")
     @ApiOperation("根据用户提交的答案对指定id的考试判分")
+    @CrossOrigin
     ResultVO<ExamRecord> finishExam(@PathVariable Long examId, @RequestBody HashMap<Long, List<String>> answersMap, HttpServletRequest request) {
         ResultVO<ExamRecord> resultVO;
         try {
@@ -119,6 +125,7 @@ public class ExamController {
 
     @GetMapping("/record/list")
     @ApiOperation("获取当前用户的考试记录")
+    @CrossOrigin
     ResultVO<List<ExamRecordVo>> getExamRecordList(HttpServletRequest request) {
         ResultVO<List<ExamRecordVo>> resultVO;
         try {
@@ -136,6 +143,7 @@ public class ExamController {
 
     @GetMapping("/record/detail/{recordId}")
     @ApiOperation("根据考试记录id获取考试记录详情")
+    @CrossOrigin
     ResultVO<RecordDetailVo> getExamRecordDetail(@PathVariable String recordId) {
         ResultVO<RecordDetailVo> resultVO;
         try {
@@ -150,6 +158,7 @@ public class ExamController {
 
     @GetMapping("/question/sub/{id}")
     @ApiOperation("根据考试的id，获取主观题详情")
+    @CrossOrigin
     ResultVO<List<SubDetailVo>> getSubDetail(@PathVariable Long id) {
         // 根据id获取考试详情
         ResultVO<List<SubDetailVo>> resultVO;

@@ -23,6 +23,7 @@
     "react-responsive": "^4.0.3",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "xlsx": "^0.18.3"
   },
   "devDependencies": {
@@ -50,11 +51,6 @@
     "webpack-dev-server": "^2.10.0"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
