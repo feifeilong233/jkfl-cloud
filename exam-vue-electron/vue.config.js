@@ -90,25 +90,25 @@ module.exports = {
     }
   },
 
-  // devServer: {
-  //   // development server port 8000
-  //   port: 8088,
-  //   proxy: 'http://localhost:9527'
-  // },
   devServer: {
+    // development server port 8000
     port: 8088,
-    open: true,
-    proxy: {
-      '/api': {
-        target: 'http://18.163.188.158:9527/',
-        ws: true,
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': '/'
-        }
-      }
-    }
+    proxy: 'http://localhost:9527'
   },
+  // devServer: {
+  //   port: 8088,
+  //   open: true,
+  //   proxy: {
+  //     '/api': {
+  //       target: 'http://18.163.188.158:9527/',
+  //       ws: true,
+  //       changeOrigin: true,
+  //       pathRewrite: {
+  //         '^/api': '/'
+  //       }
+  //     }
+  //   }
+  // },
 
   // disable source map in production
   productionSourceMap: false,

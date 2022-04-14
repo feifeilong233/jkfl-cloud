@@ -40,17 +40,20 @@ export default {
     joinExam (id, date, elapse) {
       const newDate = new Date()
       if (Date.parse(date) < newDate && Date.parse(date) + elapse * 60 * 1000 > newDate) {
+        let flag = true
         for (const ex in this.record) {
           if (id === this.record[ex].examId) {
+            flag = false
             this.$notification.error({
               message: '您已参加过本场考试！不可重复参加！'
             })
-          } else {
-            const routeUrl = this.$router.resolve({
-              path: `/exam/${id}`
-            })
-            window.open(routeUrl.href, '_blank')
           }
+        }
+        if (flag) {
+          const routeUrl = this.$router.resolve({
+            path: `/exam/${id}`
+          })
+          window.open(routeUrl.href, '_blank')
         }
       } else {
         this.$notification.error({
