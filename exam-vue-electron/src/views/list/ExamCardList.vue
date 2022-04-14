@@ -21,6 +21,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import { getExamCardList, getExamRecordList } from '../../api/exam'
 
 export default {
