@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jkflcloud/client-server/client-server.iml" filepath="$PROJECT_DIR$/jkflcloud/client-server/client-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jkflcloud/config-server/config-server.iml" filepath="$PROJECT_DIR$/jkflcloud/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jkflcloud/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/jkflcloud/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jkflcloud/exam-server/exam-server.iml" filepath="$PROJECT_DIR$/jkflcloud/exam-server/exam-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/jkfl-cloud.iml" filepath="$PROJECT_DIR$/.idea/jkfl-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jkflcloud/jkflcloud.iml" filepath="$PROJECT_DIR$/jkflcloud/jkflcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jkflcloud/rbac-server/rbac-server.iml" filepath="$PROJECT_DIR$/jkflcloud/rbac-server/rbac-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jkflcloud/teach-server/teach-server.iml" filepath="$PROJECT_DIR$/jkflcloud/teach-server/teach-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jkflcloud/user-server/user-server.iml" filepath="$PROJECT_DIR$/jkflcloud/user-server/user-server.iml" />
+    </modules>
+  </component>
+</project>

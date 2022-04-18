@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
+        <module name="exam-server" />
+        <module name="teach-server" />
+        <module name="user-server" />
+        <module name="client-server" />
+        <module name="eureka-server" />
+        <module name="rbac-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="client-server" target="11" />
+      <module name="config-server" target="11" />
+      <module name="eureka-server" target="11" />
+      <module name="exam-server" target="11" />
+      <module name="jkflcloud" target="11" />
+      <module name="rbac-server" target="11" />
+      <module name="teach-server" target="11" />
+      <module name="user-server" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
