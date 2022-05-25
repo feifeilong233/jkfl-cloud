@@ -1,14 +1,19 @@
 server:
-  port: 8081
-
+  port: 8055
 spring:
+  mvc:
+    static-path-pattern: /**
+  servlet:
+    multipart:
+      max-file-size: 30000000
+      max-request-size: 50000000
   application:
-    name: pdf-test-service
+    name: video-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
-    url: jdbc:mysql://localhost:3306/nbook?serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1:3306/nbook?serverTimezone=GMT%2B8
     hikari:
       #连接池名
       pool-name: DateHikariCP
@@ -39,3 +44,7 @@ mybatis-plus:
     db-config:
       logic-not-delete-value: 0 # 未删除为 0
       logic-delete-value: 1 # 删了就是 1
+
+
+web:
+  upload-path: F:/Projection/jkfl-cloud/data/video
