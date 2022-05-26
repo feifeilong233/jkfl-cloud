@@ -1,3 +1,4 @@
 .idea/
 *-server/*.iml
 *-server/target/
+*-server/src/main/resources/static/

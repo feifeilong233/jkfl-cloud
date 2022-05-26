@@ -58,7 +58,7 @@ class Login extends Component {
                 <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
                     <Grid.Column style={{ maxWidth: 450 }}>
                         <Header as='h2' color='teal' textAlign='center'>
-                            <Image src='图片地址'/> Please Login
+                            <Image style={{width:'50px'}} src='/logo.svg'/> JKFL Online Exam
                         </Header>
                         <Form size='large'>
                             <Segment stacked>

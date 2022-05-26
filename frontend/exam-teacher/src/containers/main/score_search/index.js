@@ -319,7 +319,7 @@ class ScoreSearch extends React.Component {
             </Col>
 
             <Col span={2}>
-              <Button onClick={this.bindScoreDownloadClick.bind(this)}>导出Excal</Button>
+              <Button onClick={this.bindScoreDownloadClick.bind(this)}>导出Excel</Button>
             </Col>
 
             <Col span={14}>

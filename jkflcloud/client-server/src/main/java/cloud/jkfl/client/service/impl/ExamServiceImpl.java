@@ -360,6 +360,7 @@ public class ExamServiceImpl implements ExamService {
             User user = userRepository.findById(userId).orElse(null);
             examRecordVo.setUser(user);
             examRecordVo.setExamRecord(examRecord);
+            examRecordVo.setExamId(exam.getExamId());
             examRecordVoList.add(examRecordVo);
         }
         return examRecordVoList;

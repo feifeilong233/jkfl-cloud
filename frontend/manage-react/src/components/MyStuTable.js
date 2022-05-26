@@ -7,7 +7,7 @@ import axios from "axios";
 
 const treeData = [
     {
-        title: '江南大学',
+        title: '火星大学',
         key: '0',
         id:"1",
         pid:"0",
@@ -33,7 +33,7 @@ const treeData = [
         ],
     },
     {
-        title:'江北大学',
+        title:'不知道起啥名学院',
         key: '1',
         id:"2",
         pid:'0',

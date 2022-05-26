@@ -77,7 +77,7 @@ class Home extends Component {
                                               animation='zoom-in-top'
                                     >
                                         <span>
-                                            <Button btnType='primary' shape='round' style={{marginRight: '10px'}}>Download</Button>
+                                            <Button btnType='primary' shape='round' style={{marginRight: '10px'}}><a href='http://18.163.188.158:9527' target='_blank'>Sign in</a></Button>
                                             <Button shape='round' ghost onClick={this.jumpToStuMore}>More</Button>
                                         </span>
                                     </Animator>
@@ -133,7 +133,7 @@ class Home extends Component {
                                         <p className='jkfl-card-content'>点击下方按钮即可进行下载</p>
                                     </span>
                                    <div style={{marginBottom:'1vh'}}/>
-                                   <Button shape='round' btnType='primary' style={{marginRight:'5px'}}>Download</Button>
+                                   <Button shape='round' btnType='primary' style={{marginRight:'5px'}}><a href='http://localhost:3001/#/login' target='_blank'>Sign in</a></Button>
                                    <Button shape='round' btnType='danger' onClick={this.jumpToStuHome}>返回</Button>
                                </span>
                             </div>
@@ -157,7 +157,7 @@ class Home extends Component {
                                         <p className='jkfl-card-content'>点击下方按钮即可登陆</p>
                                     </span>
                                    <div style={{marginBottom:'1vh'}}/>
-                                <Button shape='round' btnType='primary' style={{marginRight:'5px'}}><a href='http://localhost:3001/login' target='_blank' >Sign in</a></Button>
+                                <Button shape='round' btnType='primary' style={{marginRight:'5px'}}><a href='http://localhost:3001/#/login' target='_blank' >Sign in</a></Button>
                                    <Button shape='round' btnType='danger' onClick={this.jumpToTeaHome}>返回</Button>
                                </span>
                         </div>
@@ -179,7 +179,7 @@ class Home extends Component {
                                                 fontSize:'x-large',
                                                 marginTop:'5px'
                                             }}
-                                            href='http://localhost:3004/login'
+                                            href='http://18.163.188.158:8000/#/login'
                                             target='_blank'
                                     >Sign in</Button>
                                 </span>

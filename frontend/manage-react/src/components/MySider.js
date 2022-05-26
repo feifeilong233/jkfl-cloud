@@ -23,8 +23,6 @@ const menuList = [
             {key:1,title:"老师管理",path:"/back/systea"},
             {key:2,title:"学生管理",path:"/back/sysstu"},
             {key:3,title:"组织管理",path:"/back/sysorg"},
-            {key:4,title:'菜单管理',path:'/back/sysmenu'},
-            {key:5,title:"试卷管理",path:"/back/sysexam"}
         ]
     },
     {   key:'sub2',
@@ -35,7 +33,7 @@ const menuList = [
         ]
     },
     {   key:'sub3',
-        title:"系统管理",
+        title:"后台管理",
         icon: <SettingOutlined />,
         children:[
             {key:8,title:"服务器状态",path:"/back/sysstatus"},

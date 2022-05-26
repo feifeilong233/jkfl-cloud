@@ -64,10 +64,6 @@ module.exports = {
             loader: "less-loader",
             options: {
               sourceMap: true,
-              modifyVars: {
-                '@primary-color': '#f47983',
-                '@border-radius-base': '5px',
-              },
               javascriptEnabled: true,
             }
           }]
@@ -85,7 +81,7 @@ module.exports = {
 
     // 打开浏览器
     new OpenBrowserPlugin({
-      url: 'http://localhost:3001/login'
+      url: 'http://localhost:3001/#/login'
     }),
 
     // 可在业务 js 代码中使用 __DEV__ 判断是否是dev模式（dev模式下可以提示错误、测试报告等, production模式不提示）

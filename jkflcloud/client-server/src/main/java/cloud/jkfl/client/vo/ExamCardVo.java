@@ -6,10 +6,13 @@
  ***********************************************************/
 package cloud.jkfl.client.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
+
+import java.util.Date;
 
 @Data
 public class ExamCardVo {
@@ -27,4 +30,7 @@ public class ExamCardVo {
      */
     @JsonProperty("elapse")
     private Integer examTotalTime;
+    @JsonProperty("date")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date examDate;
 }

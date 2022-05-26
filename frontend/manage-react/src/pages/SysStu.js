@@ -93,9 +93,9 @@ const stu_data1 = [
         ctime:'2022-02-08 10:00',
         utime:'2022-02-08 10:01',
         job:'普通老师',
-        school:'江南大学',
+        school:'火星大学',
         academy:'人工智能与计算机学院',
-        address: '无锡市滨湖区蠡湖大道1800号江南大学',
+        address: '无锡市滨湖区蠡湖大道1800号火星大学',
         description:'第一个诞生得用户！'
     },
     {
@@ -109,9 +109,9 @@ const stu_data1 = [
         ctime:'2022-02-08 10:00',
         utime:'2022-02-08 10:01',
         job:'普通老师',
-        school:'江南大学',
+        school:'火星大学',
         academy:'物联网工程学院',
-        address: '无锡市滨湖区蠡湖大道1800号江南大学',
+        address: '无锡市滨湖区蠡湖大道1800号火星大学',
         description:'第一个诞生得用户！'
     },
     {
@@ -125,9 +125,9 @@ const stu_data1 = [
         ctime:'2022-02-08 10:00',
         utime:'2022-02-08 10:01',
         job:'普通老师',
-        school:'江南大学',
+        school:'火星大学',
         academy:'瞎几把创得学院',
-        address: '无锡市滨湖区蠡湖大道1800号江南大学',
+        address: '无锡市滨湖区蠡湖大道1800号火星大学',
         description:'第一个诞生得用户！'
     },
     {
@@ -141,9 +141,9 @@ const stu_data1 = [
         ctime:'2022-02-08 10:00',
         utime:'2022-02-08 10:01',
         job:'普通老师',
-        school:'江南大学',
+        school:'火星大学',
         academy:'人工智能与计算机学院',
-        address: '无锡市滨湖区蠡湖大道1800号江南大学',
+        address: '无锡市滨湖区蠡湖大道1800号火星大学',
         description:'第一个诞生得用户！'
     },
     {
@@ -157,9 +157,9 @@ const stu_data1 = [
         ctime:'2022-02-08 10:00',
         utime:'2022-02-08 10:01',
         job:'普通老师',
-        school:'江南大学',
+        school:'火星大学',
         academy:'人工智能与计算机学院',
-        address: '无锡市滨湖区蠡湖大道1800号江南大学',
+        address: '无锡市滨湖区蠡湖大道1800号火星大学',
         description:'第一个诞生得用户！'
     },
     {
@@ -173,9 +173,9 @@ const stu_data1 = [
         ctime:'2022-02-08 10:00',
         utime:'2022-02-08 10:01',
         job:'普通老师',
-        school:'江南大学',
+        school:'火星大学',
         academy:'人工智能与计算机学院',
-        address: '无锡市滨湖区蠡湖大道1800号江南大学',
+        address: '无锡市滨湖区蠡湖大道1800号火星大学',
         description:'第一个诞生得用户！'
     },
     {
@@ -189,9 +189,9 @@ const stu_data1 = [
         ctime:'2022-02-08 10:00',
         utime:'2022-02-08 10:01',
         job:'普通老师',
-        school:'江南大学',
+        school:'火星大学',
         academy:'人工智能与计算机学院',
-        address: '无锡市滨湖区蠡湖大道1800号江南大学',
+        address: '无锡市滨湖区蠡湖大道1800号火星大学',
         description:'第一个诞生得用户！'
     },
     {
@@ -205,9 +205,9 @@ const stu_data1 = [
         ctime:'2022-02-08 10:00',
         utime:'2022-02-08 10:01',
         job:'普通老师',
-        school:'江南大学',
+        school:'火星大学',
         academy:'人工智能与计算机学院',
-        address: '无锡市滨湖区蠡湖大道1800号江南大学',
+        address: '无锡市滨湖区蠡湖大道1800号火星大学',
         description:'第一个诞生得用户！'
     },
     {
@@ -221,9 +221,9 @@ const stu_data1 = [
         ctime:'2022-02-08 10:00',
         utime:'2022-02-08 10:01',
         job:'普通老师',
-        school:'江南大学',
+        school:'火星大学',
         academy:'人工智能与计算机学院',
-        address: '无锡市滨湖区蠡湖大道1800号江南大学',
+        address: '无锡市滨湖区蠡湖大道1800号火星大学',
         description:'第一个诞生得用户！'
     },
     {
@@ -237,9 +237,9 @@ const stu_data1 = [
         ctime:'2022-02-08 10:00',
         utime:'2022-02-08 10:01',
         job:'普通老师',
-        school:'江南大学',
+        school:'火星大学',
         academy:'人工智能与计算机学院',
-        address: '无锡市滨湖区蠡湖大道1800号江南大学',
+        address: '无锡市滨湖区蠡湖大道1800号火星大学',
         description:'第一个诞生得用户！'
     },
 ];

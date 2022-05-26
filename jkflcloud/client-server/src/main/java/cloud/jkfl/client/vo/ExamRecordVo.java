@@ -9,6 +9,8 @@ package cloud.jkfl.client.vo;
 import cloud.jkfl.client.entity.Exam;
 import cloud.jkfl.client.entity.ExamRecord;
 import cloud.jkfl.client.entity.User;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 @Data
@@ -27,4 +29,7 @@ public class ExamRecordVo {
      * 参加考试的用户信息
      */
     private User user;
+
+    @JsonSerialize(using = ToStringSerializer.class)
+    private long examId;
 }

@@ -2,18 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, Switch} from "react-router-dom";
 import Login from "./router/Login";
 import Home from "./router/Home";
 import 'antd/dist/antd.css';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
       <Switch>
           <Route path="/login" component={Login}/>
           <Route path='/back' component={Home}/>
       </Switch>
-  </BrowserRouter>
+  </HashRouter>
   ,document.getElementById('root')
 );
 

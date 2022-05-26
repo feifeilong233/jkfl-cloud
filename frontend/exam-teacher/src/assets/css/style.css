@@ -73,10 +73,27 @@
   transform: translateY(-50%);
 }
 
+/*.login .logo {*/
+/*  display: block;*/
+/*  margin: 0 auto;*/
+/*  margin-top: 50px*/
+/*}*/
+
 .login .logo {
-  display: block;
-  margin: 0 auto;
+  height: 44px;
+  vertical-align: top;
+  margin-left: 36px;
+  border-style: none;
   margin-top: 50px
+}
+
+.login .title {
+  font-size: 28px;
+  color: rgba(0, 0, 0, .85);
+  font-family: Avenir, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  position: relative;
+  top: 50px;
 }
 
 .login .login-form-button {
@@ -110,8 +127,16 @@
 
 #leftMenu .logo {
   display: block;
-  width: 130px;
-  margin: 50px auto;
+  width: 64px;
+  margin: 25px auto;
+}
+
+#leftMenu .title {
+  font-size: 28px;
+  color: rgba(0, 0, 0, .85);
+  font-family: Avenir, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  margin-left: 28px;
 }
 
 #leftMenu .ant-menu-inline {
