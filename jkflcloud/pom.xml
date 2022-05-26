@@ -16,6 +16,8 @@
         <module>rbac-server</module>
         <module>client-server</module>
         <module>teach-server</module>
+        <module>wx-server</module>
+        <module>video-server</module>
     </modules>
 
     <properties>

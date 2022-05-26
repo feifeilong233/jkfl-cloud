@@ -11,7 +11,7 @@
  Target Server Version : 80025
  File Encoding         : 65001
 
- Date: 18/04/2022 16:07:22
+ Date: 24/05/2022 23:23:27
 */
 
 SET NAMES utf8mb4;
@@ -119,6 +119,6 @@ CREATE TABLE `edu_user_book`  (
 -- ----------------------------
 -- Records of edu_user_book
 -- ----------------------------
-INSERT INTO `edu_user_book` VALUES ('d7243f7a42c72f579399db674cd1a594', '79392778a90d4639a297dbd0bae0f779', '95a5af39bc31403eaee3dd55d0f8c36c', 'ba811ce3d600411ca612e645608f5ef3');
+INSERT INTO `edu_user_book` VALUES ('d7243f7a42c72f579399db674cd1a594', '79392778a90d4639a297dbd0bae0f779', '95a5af39bc31403eaee3dd55d0f8c36c', '049fa67e3b37444293d8f05e8c51ba28');
 
 SET FOREIGN_KEY_CHECKS = 1;

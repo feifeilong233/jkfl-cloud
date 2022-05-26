@@ -1,0 +1,98 @@
+# 配置Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    threads:
+      max: 200
+      min-spare: 30
+    connection-timeout: 5000ms
+  port: 8099
+  servlet:
+    context-path: /wx-server
+
+# MySQL
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/emos?serverTimezone=GMT%2B8
+    hikari:
+      #连接池名
+      pool-name: DateHikariCP
+      #最小空闲连接数
+      minimum-idle: 10
+      # 空闲连接存活最大时间，默认600000（10分钟）
+      idle-timeout: 180000
+      # 连接池最大连接数，默认是10
+      maximum-pool-size: 60
+      # 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      max-lifetime: 1800000
+      # 数据库连接超时时间,默认30秒，即30000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+    xa:
+      properties:
+        useInformationSchema: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  # Redis
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: abc123456
+    timeout: 5000
+    jedis:
+      pool:
+        max-active: 1000
+        max-wait: -1ms
+        max-idle: 16
+        min-idle: 8
+  mail:
+    default-encoding: UTF-8
+    host: smtp.qq.com
+    username: 1356768966@qq.com
+    password: muezmjiyoumbideg
+  data:
+    mongodb:
+      uri: mongodb://root:123456@localhost:27017/jkfl
+
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: xion.boot.online.pojo
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    root: info
+    xion.boot.online.dao: warn
+  pattern:
+    console: "%d{HH:mm:ss} %-5level %msg%n"
+
+# jwt
+emos:
+  code: jkfl-cloud
+  jwt:
+    secret: xiyeye666
+    expire: 5
+    cache-expire: 10
+  face:
+    # 创建人脸模型数据
+    createFaceModelUrl: http://192.168.118.128:3000/create_face_model
+    # 调用人脸识别检测
+    checkinUrl: http://192.168.118.128:3000/checkin
+  email:
+    system: 2151885318@qq.com
+  image-folder: F:/Projection/online-system-office/data
+
+
+wx:
+  app-id: wx472263e4f26f603f
+  app-secret: dbaa1be96cb42a80ed81e64767746cc6
