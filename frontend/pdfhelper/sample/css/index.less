@@ -1,0 +1,57 @@
+html {
+    font-size: 16px;
+    color: #333;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#paper {
+    h1 {
+        text-align: center;
+    }
+
+    #paper-container {
+        .exam-item {
+            margin-bottom: 2rem;
+
+            .qs-container {
+                width: 95%;
+                margin: 0 auto;
+
+                &>li {
+                    margin-bottom: 1.2rem;
+
+                    &>div:not(:last-child) {
+                        margin-bottom: .4rem;
+                    }
+                }
+            }
+        }
+
+        #sqs {
+            .q-Question {
+                .q-stem {
+                    margin-bottom: .5rem;
+                }
+
+                ul {
+                    margin-left: 1.1rem;
+                    li {
+                        line-height: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        #saqs, #pqs {
+            .qs-container li {
+                height: 18rem;
+            }
+        }
+    }
+}

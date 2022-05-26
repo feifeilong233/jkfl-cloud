@@ -170,4 +170,19 @@ public class ExamController {
         }
         return resultVO;
     }
+
+    @GetMapping("/paper/{id}")
+    @ApiOperation("根据试卷的id，获取主观题详情")
+    @CrossOrigin
+    ResultVO<PaperDetailVo> getPaperDetail(@PathVariable Long id) {
+        // 根据id获取考试详情
+        ResultVO<PaperDetailVo> resultVO;
+        try {
+            PaperDetailVo paperDetails = examService.getPaperDetail(id);
+            resultVO = new ResultVO<>(0, "获取试卷详情成功", paperDetails);
+        } catch (Exception e) {
+            resultVO = new ResultVO<>(-1, "获取试卷详情失败", null);
+        }
+        return resultVO;
+    }
 }

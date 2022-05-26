@@ -44,6 +44,8 @@ public interface ExamService {
 
     List<SubDetailVo> getSubDetail(Long id);
 
+    PaperDetailVo getPaperDetail(Long id);
+
     /**
      * 根据用户提交的作答信息进行判分
      *

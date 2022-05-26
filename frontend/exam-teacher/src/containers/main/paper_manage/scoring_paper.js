@@ -188,6 +188,14 @@ class ScoringPaper extends React.Component {
           }
         </span>
       ),
+    }, {
+      title: '成绩查询',
+      key: 'action',
+      render: () => (
+          <Button size="small" onClick={()=> {
+            this.props.history.push('/main/paper_manage/score_search');
+          }}>成绩查询</Button>
+      ),
     }];
 
     //教师列表

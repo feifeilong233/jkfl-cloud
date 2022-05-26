@@ -25,11 +25,6 @@ export default class Homepage extends React.Component {
           </Link>
         </div>
         <div className="fast-enter-card">
-          <Link to="/main/score_search">
-            <FastEnterCard title="成绩查询" icon="search"></FastEnterCard>
-          </Link>
-        </div>
-        <div className="fast-enter-card">
           <Link to="/main/student_manage/query_student">
             <FastEnterCard title="学生管理" icon="usergroup-add"></FastEnterCard>
           </Link>

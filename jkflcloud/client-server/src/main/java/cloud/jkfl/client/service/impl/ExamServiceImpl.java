@@ -502,4 +502,33 @@ public class ExamServiceImpl implements ExamService {
         examRecordRepository.save(examRecord);
         return examRecord;
     }
+
+    public PaperDetailVo getPaperDetail(Long id) {
+        ExamDetailVo examDetailVo = getExamDetail(id);
+        String examSource = examDetailVo.getExam().getExamSource();
+        List<String> RIds = Arrays.asList(examDetailVo.getRadioIds());
+        List<String> CIds = Arrays.asList(examDetailVo.getCheckIds());
+        List<String> JIds = Arrays.asList(examDetailVo.getJudgeIds());
+        List<Long> iqIds = examDetailVo.getIqIds();
+        List<Long> saqIds = examDetailVo.getSaqIds();
+        List<Long> pqIds = examDetailVo.getPqIds();
+        List<Long> rqIds = RIds.stream().map(s -> Long.parseLong(s.trim())).collect(Collectors.toList());
+        List<Long> cqIds = CIds.stream().map(s -> Long.parseLong(s.trim())).collect(Collectors.toList());
+        List<Long> jqIds = JIds.stream().map(s -> Long.parseLong(s.trim())).collect(Collectors.toList());
+        List<SelectQuestion> sqList = selectQuestionRepository.findAllById(rqIds);
+        List<MultipleQuestion> mqList = multipleQuestionRepository.findAllById(cqIds);
+        List<JudgeQuestion> jqList = judgeQuestionRepository.findAllById(jqIds);
+        List<InputQuestion> iqList = inputQuestionRepository.findAllById(iqIds);
+        List<ShortAnswerQuestion> saqList = shortAnswerQuestionRepository.findAllById(saqIds);
+        List<ProgramQuestion> pqList = programQuestionRepository.findAllById(pqIds);
+        PaperDetailVo paperDetailVo = new PaperDetailVo();
+        paperDetailVo.setSqList(sqList);
+        paperDetailVo.setMqList(mqList);
+        paperDetailVo.setJqList(jqList);
+        paperDetailVo.setIqList(iqList);
+        paperDetailVo.setSaqList(saqList);
+        paperDetailVo.setPqList(pqList);
+        paperDetailVo.setName(examSource);
+        return paperDetailVo;
+    }
 }

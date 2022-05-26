@@ -1,0 +1,390 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            font-size: 16px;
+            color: #333;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #paper h1 {
+            text-align: center;
+        }
+
+        #paper #paper-container .exam-item {
+            margin-bottom: 2rem;
+        }
+
+        #paper #paper-container .exam-item .qs-container {
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        #paper #paper-container .exam-item .qs-container>li {
+            margin-bottom: 1.2rem;
+        }
+
+        #paper #paper-container .exam-item .qs-container>li>div:not(:last-child) {
+            margin-bottom: 0.4rem;
+        }
+
+        #paper #paper-container #sqs .q-Question .q-stem {
+            margin-bottom: 0.5rem;
+        }
+
+        #paper #paper-container #sqs .q-Question ul {
+            margin-left: 1.1rem;
+        }
+
+        #paper #paper-container #sqs .q-Question ul li {
+            line-height: 1.5rem;
+        }
+
+        #paper #paper-container #saqs .qs-container li,
+        #paper #paper-container #pqs .qs-container li {
+            height: 18rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="paper">
+        <h1>前端基础模拟考试(二)</h1>
+        <div id="paper-container">
+            <div class="exam-item" id="sqs">
+                <h3>一、单选题（每题<span>2</span>分）</h3>
+                <ul class="qs-container">
+
+                <li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">1.</span>
+                        <span>通过javascript控制id=“d1”的div隐藏，使用的代码是</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>document.getElementById(“d1”).style.show = “false”;</li>
+                        <li><span class="q-abcd">B. </span>document.getElementById(“d1”).style.show = “none”;</li>
+                        <li><span class="q-abcd">C. </span>document.getElementById(“d1”).style.display = “false”</li>
+                        <li><span class="q-abcd">D. </span>document.getElementById(“d1”).style.display = “none”;</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">2.</span>
+                        <span>window对象如下哪个方法是创建一个有”确定”、”取消”两个按钮的对话框 （    ）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>open( )</li>
+                        <li><span class="q-abcd">B. </span>alert(  )</li>
+                        <li><span class="q-abcd">C. </span>confirm( )</li>
+                        <li><span class="q-abcd">D. </span>prompt()</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">3.</span>
+                        <span>在HTML页面上包含如下所示的层对象，则javascript语句document.getElementById(“info”).innerHTML的值是（     ）
+
+&lt;div id=”info” style=”display:block”&gt;&lt;p&gt;请填写&lt;/p&gt;&lt;/div&gt;</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>请填写</li>
+                        <li><span class="q-abcd">B. </span>&lt;p&gt;请填写&lt;/p&gt;</li>
+                        <li><span class="q-abcd">C. </span>id=”info” style=”display:block”</li>
+                        <li><span class="q-abcd">D. </span>&lt;div id=”info” style=”display:block”&gt;&lt;p&gt;请填写&lt;/p&gt;</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">4.</span>
+                        <span>下列不属于访问指定节点的方法的是
+</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>obj.value</li>
+                        <li><span class="q-abcd">B. </span>getElementsByTagName  得到是一个数组</li>
+                        <li><span class="q-abcd">C. </span>getElementsByName   得到是一个数组</li>
+                        <li><span class="q-abcd">D. </span>getElementById    得到的是一个对象</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">5.</span>
+                        <span>分析下面的Javascript代码段，输出结果是（   ）                                   
+
+var s1=parseInt(“101中学”);
+
+document.write(s1);代码段，输出结果是</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>NaN</li>
+                        <li><span class="q-abcd">B. </span>101中学</li>
+                        <li><span class="q-abcd">C. </span>101</li>
+                        <li><span class="q-abcd">D. </span>出现脚本错误</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">6.</span>
+                        <span>在JavaScript中，下拉选项中可以获取滚动条距窗口顶端滚动的距离的是 (    ).</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>document.documentElement.scrollTop;  </li>
+                        <li><span class="q-abcd">B. </span>document.documentElement.topScroll;</li>
+                        <li><span class="q-abcd">C. </span>document.style.scrollTop;  </li>
+                        <li><span class="q-abcd">D. </span>document.style.topScroll;</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">7.</span>
+                        <span>系统预先定义好的，直接使用的对象称为（）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>内置对象</li>
+                        <li><span class="q-abcd">B. </span>宿主对象</li>
+                        <li><span class="q-abcd">C. </span>宿主对象</li>
+                        <li><span class="q-abcd">D. </span>日期对象</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">8.</span>
+                        <span>关于数学对象的描述中错误的是（）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>math对象包含一些常用的属性和方法</li>
+                        <li><span class="q-abcd">B. </span>Math对象拥有构造函数</li>
+                        <li><span class="q-abcd">C. </span>Math对象无需创建</li>
+                        <li><span class="q-abcd">D. </span>可以直接通过属性对象.属性名调用</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">9.</span>
+                        <span>以下（）表达式产生一个0-7之间（含0,7）的随机整数。</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>Math.floor(Math.random()*6)</li>
+                        <li><span class="q-abcd">B. </span>Math.floor(Math.random()*7)</li>
+                        <li><span class="q-abcd">C. </span>Math.floor(Math.random()*8)</li>
+                        <li><span class="q-abcd">D. </span>Math.floor(Math.random()*9)</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">10.</span>
+                        <span>产生当前日期的方法是（）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>Now（）</li>
+                        <li><span class="q-abcd">B. </span>Date ()</li>
+                        <li><span class="q-abcd">C. </span>new Date（）</li>
+                        <li><span class="q-abcd">D. </span>new Now ()</li>
+                    </ul>
+                </div>
+                </li></ul>
+            </div>
+            <div class="exam-item" id="mqs">
+                <h3>二、多选题（每题<span>4</span>分）</h3>
+                <ul class="qs-container">
+
+                <li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">1.</span>
+                        <span>下列关于JavaScript函数的描述中，正确的是（  ）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>要先定义后使用</li>
+                        <li><span class="q-abcd">B. </span>JS函数一般定义在HTML文件的头部或外部JS文件中</li>
+                        <li><span class="q-abcd">C. </span>函数的定义可以在HTML文件的主体body标记中的任何位置</li>
+                        <li><span class="q-abcd">D. </span>函数需要在每次使用的时候重新定义</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">2.</span>
+                        <span>下列属于内置对象的是（）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>字符串对象</li>
+                        <li><span class="q-abcd">B. </span>数学对象</li>
+                        <li><span class="q-abcd">C. </span>数学对象</li>
+                        <li><span class="q-abcd">D. </span>浏览器对象</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">3.</span>
+                        <span>字符串对象的属性包括（）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>constructor</li>
+                        <li><span class="q-abcd">B. </span>length</li>
+                        <li><span class="q-abcd">C. </span>prototype</li>
+                        <li><span class="q-abcd">D. </span>PI</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">4.</span>
+                        <span>下列数学对象的属性中描述正确的是（）。</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>LN2返回2的自然对数</li>
+                        <li><span class="q-abcd">B. </span>PI返回圆周率</li>
+                        <li><span class="q-abcd">C. </span>E返回算术常量e，即自然对数的底数</li>
+                        <li><span class="q-abcd">D. </span>SQRT2返回2 的平方根的倒数</li>
+                    </ul>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">5.</span>
+                        <span>创建日期对象的方法有（）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>new Date()</li>
+                        <li><span class="q-abcd">B. </span>new Date(日期字符串)</li>
+                        <li><span class="q-abcd">C. </span>new Date(年,月,日,[时,分,秒,毫秒]);</li>
+                        <li><span class="q-abcd">D. </span>new Date(毫秒)</li>
+                    </ul>
+                </div>
+                </li></ul>
+            </div>
+            <div class="exam-item" id="jqs">
+                <h3>三、判断题（每题<span>2</span>分）</h3>
+                <ul class="qs-container">
+
+                <li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">1.</span>
+                        <span>js中通过===判断值是否相等</span>
+                    </div>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">2.</span>
+                        <span>在React类式编程中可以使用函数式编程中的hook函数“useRef”创造回调</span>
+                    </div>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">3.</span>
+                        <span>在HTML5中使用JavaScript有两种方法，分别是内嵌式和外链式。（）</span>
+                    </div>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">4.</span>
+                        <span>无论是编程语言还是脚本语言，程序的基本结构都是顺序结构、选择结构、循环结构。（）</span>
+                    </div>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">5.</span>
+                        <span>对象就是一组属性与方法的集合。</span>
+                    </div>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">6.</span>
+                        <span>字符串对象方法toLowerCase()，是将字符串对象转换为大写。</span>
+                    </div>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">7.</span>
+                        <span>Floor（x）方法可实现对数字进行上取整。（）</span>
+                    </div>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">8.</span>
+                        <span>JavaScript脚本内置了本地对象Date，该对象可以表示从毫秒到年的所有时间和日期。</span>
+                    </div>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">9.</span>
+                        <span>SetTimeout用于设置一个计时器，在指定的时间间隔后调用函数或计算表达式，可以多次执行。</span>
+                    </div>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">10.</span>
+                        <span>语句var date=new Date(1000000000000)的返回结果为Sun Sep 09 2001 09:46:40 GMT+0800。</span>
+                    </div>
+                </div>
+                </li></ul>
+            </div>
+            <div class="exam-item" id="iqs">
+                <h3>四、填空题（每题<span>3</span>分）</h3>
+                <ul class="qs-container">
+
+                </ul>
+            </div>
+            <div class="exam-item" id="saqs">
+                <h3>五、简单题（每题<span>10</span>分）</h3>
+                <ul class="qs-container">
+
+                <li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">1.</span>
+                        <span>讲下变量的作用域</span>
+                    </div>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">2.</span>
+                        <span>讲下DOM对象的三种查询方式</span>
+                    </div>
+                </div>
+                </li></ul>
+            </div>
+            <div class="exam-item" id="pqs">
+                <h3>六、程序题（每题<span>10</span>分）</h3>
+                <ul class="qs-container">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>

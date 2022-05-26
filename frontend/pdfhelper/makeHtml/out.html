@@ -1,0 +1,787 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            font-size: 16px;
+            color: #333;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #paper h1 {
+            text-align: center;
+        }
+
+        #paper #paper-container .exam-item {
+            margin-bottom: 2rem;
+        }
+
+        #paper #paper-container .exam-item .qs-container {
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        #paper #paper-container .exam-item .qs-container>li {
+            margin-bottom: 1.2rem;
+        }
+
+        #paper #paper-container .exam-item .qs-container>li>div:not(:last-child) {
+            margin-bottom: 0.4rem;
+        }
+
+        #paper #paper-container .exam-item .qs-container .q-info {
+            font-size: 0.9rem;
+        }
+
+        #paper #paper-container .exam-item .qs-container .q-info .q-info-title {
+            font-weight: bold;
+        }
+
+        #paper #paper-container .exam-item .qs-container .q-info .q-info-content {
+            text-decoration: underline;
+        }
+
+        #paper #paper-container .exam-item .qs-container .q-Subject {
+            font-size: 0.8rem;
+        }
+
+        #paper #paper-container .exam-item .qs-container .q-Answer .q-info-title {
+            color: red;
+        }
+
+        #paper #paper-container .exam-item .qs-container .q-Answer .q-info-content {
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        #paper #paper-container .exam-item .qs-container .q-Analysis {
+            margin-top: 1rem;
+            padding: 0.1px;
+            padding-left: 3rem;
+            padding-right: 2rem;
+            background-color: #eee;
+            border-left: #333 solid 0.6rem;
+            position: relative;
+        }
+
+        #paper #paper-container .exam-item .qs-container .q-Analysis>span {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #999;
+            position: absolute;
+            left: 0.8rem;
+        }
+
+        #paper #paper-container .exam-item .qs-container .q-Analysis>p {
+            line-height: 2rem;
+        }
+
+        #paper #paper-container #sqs .q-Question,
+        #paper #paper-container #mqs .q-Question {
+            margin-bottom: 0.5rem;
+        }
+
+        #paper #paper-container #sqs .q-Question .q-stem,
+        #paper #paper-container #mqs .q-Question .q-stem {
+            margin-bottom: 0.5rem;
+        }
+
+        #paper #paper-container #sqs .q-Question ul,
+        #paper #paper-container #mqs .q-Question ul {
+            margin-left: 1.1rem;
+        }
+
+        #paper #paper-container #sqs .q-Question ul li,
+        #paper #paper-container #mqs .q-Question ul li {
+            line-height: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="paper">
+        <h1>JavaScript基础模拟考试(一)</h1>
+        <div id="paper-container">
+            <div class="exam-item" id="sqs">
+                <h3>一、单选题（每题<span>2</span>分）</h3>
+                <ul class="qs-container">
+
+                <li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">1.</span>
+                        <span>HTML发展到多少代了</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>3代</li>
+                        <li><span class="q-abcd">B. </span>4代</li>
+                        <li><span class="q-abcd">C. </span>5代</li>
+                        <li><span class="q-abcd">D. </span>6代</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">html</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">C</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">2.</span>
+                        <span>超文本用什么标签闭合</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>&lt;html&gt;&lt;/html&gt;</li>
+                        <li><span class="q-abcd">B. </span>&lt;doc&gt;&lt;/doc&gt;</li>
+                        <li><span class="q-abcd">C. </span>&lt;text&gt;&lt;/text&gt;</li>
+                        <li><span class="q-abcd">D. </span>&lt;script&gt;&lt;/script&gt;</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">html</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">A</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">3.</span>
+                        <span>下列不属于访问指定节点的方法的是
+</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>obj.value</li>
+                        <li><span class="q-abcd">B. </span>getElementsByTagName  得到是一个数组</li>
+                        <li><span class="q-abcd">C. </span>getElementsByName   得到是一个数组</li>
+                        <li><span class="q-abcd">D. </span>getElementById    得到的是一个对象</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">A</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">4.</span>
+                        <span>下关于JAVASCRIPT函数方法getMonth()的特点（  ）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>获取的月份是从1开始计数的</li>
+                        <li><span class="q-abcd">B. </span>获取的月份是从0开始计数的</li>
+                        <li><span class="q-abcd">C. </span>获取的月份是英文单词的缩写，如六月份为Jun</li>
+                        <li><span class="q-abcd">D. </span>无法获取月份</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">B</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">5.</span>
+                        <span>在JavaScript中，下拉选项中可以获取滚动条距窗口顶端滚动的距离的是 (    ).</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>document.documentElement.scrollTop;  </li>
+                        <li><span class="q-abcd">B. </span>document.documentElement.topScroll;</li>
+                        <li><span class="q-abcd">C. </span>document.style.scrollTop;  </li>
+                        <li><span class="q-abcd">D. </span>document.style.topScroll;</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">A</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">6.</span>
+                        <span>在使用Javascript实现省市级联菜单功能时，在添加城市列表前清空原来的下拉选项的代码是（    ）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>document.myform.selCity.options.clear()</li>
+                        <li><span class="q-abcd">B. </span>document.myform.selCity.options.deleteAll()</li>
+                        <li><span class="q-abcd">C. </span>document.myform.selCity.options.length=0</li>
+                        <li><span class="q-abcd">D. </span>document.myform.selCity.options.size=0</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">C</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">7.</span>
+                        <span>系统预先定义好的，直接使用的对象称为（）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>内置对象</li>
+                        <li><span class="q-abcd">B. </span>宿主对象</li>
+                        <li><span class="q-abcd">C. </span>宿主对象</li>
+                        <li><span class="q-abcd">D. </span>日期对象</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">A</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">8.</span>
+                        <span>返回某数四舍五入之后保留x位小数的方法是（）。</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>toFixed(x)</li>
+                        <li><span class="q-abcd">B. </span>toPrecision(x)</li>
+                        <li><span class="q-abcd">C. </span>floor(x)</li>
+                        <li><span class="q-abcd">D. </span>round(x)</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">A</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">9.</span>
+                        <span>下列关于数学对象的方法的描述中错误的是（）。</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>abs(x)返回数字的绝对值</li>
+                        <li><span class="q-abcd">B. </span>ceil(x)对数字进行下取整</li>
+                        <li><span class="q-abcd">C. </span>exp(x)返回e的对数</li>
+                        <li><span class="q-abcd">D. </span>random()返回0-1之间的随机数</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">B</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">10.</span>
+                        <span>关于JS中日期对象的格式转换，错误的是（）。</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>toString()把 Date 对象转换为字符串</li>
+                        <li><span class="q-abcd">B. </span>toDateString()把 Date 对象的日期部分转换为字符串</li>
+                        <li><span class="q-abcd">C. </span>toLocaleString()根据本地时间格式，把 Date 对象转换为字符串</li>
+                        <li><span class="q-abcd">D. </span>toLocaleDateString()根据本地时间格式，根据本地时间格式，把 Date 对象转换为字符串</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">D</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li></ul>
+            </div>
+            <div class="exam-item" id="mqs">
+                <h3>二、多选题（每题<span>4</span>分）</h3>
+                <ul class="qs-container">
+
+                <li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">1.</span>
+                        <span>以下哪些文件格式是样式文件</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>.css</li>
+                        <li><span class="q-abcd">B. </span>.wxss</li>
+                        <li><span class="q-abcd">C. </span>.less</li>
+                        <li><span class="q-abcd">D. </span>.scss</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">css</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">A,B,C,D</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>以上均为样式文件</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">2.</span>
+                        <span>下列属于内置对象的是（）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>字符串对象</li>
+                        <li><span class="q-abcd">B. </span>数学对象</li>
+                        <li><span class="q-abcd">C. </span>数学对象</li>
+                        <li><span class="q-abcd">D. </span>浏览器对象</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">A,B,C</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">3.</span>
+                        <span>字符串对象的属性包括（）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>constructor</li>
+                        <li><span class="q-abcd">B. </span>length</li>
+                        <li><span class="q-abcd">C. </span>prototype</li>
+                        <li><span class="q-abcd">D. </span>PI</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">A,B,C</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">4.</span>
+                        <span>下列数学对象的属性中描述正确的是（）。</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>LN2返回2的自然对数</li>
+                        <li><span class="q-abcd">B. </span>PI返回圆周率</li>
+                        <li><span class="q-abcd">C. </span>E返回算术常量e，即自然对数的底数</li>
+                        <li><span class="q-abcd">D. </span>SQRT2返回2 的平方根的倒数</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">A,B,C</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">5.</span>
+                        <span>下列日期对象的设置方法中描述正确的是（）</span>
+                    </div>
+                    <ul>
+                        <li><span class="q-abcd">A. </span>setDate()设置 Date 对象中月的某一天 (1 ~ 31)</li>
+                        <li><span class="q-abcd">B. </span>setHours()设置 Date 对象中的小时 (0 ~ 23)</li>
+                        <li><span class="q-abcd">C. </span>setFullYear()设置 Date 对象中的年份</li>
+                        <li><span class="q-abcd">D. </span>setSeconds()设置 Date 对象中的秒钟 (0 ~ 59)</li>
+                    </ul>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">A,B,C,D</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li></ul>
+            </div>
+            <div class="exam-item" id="jqs">
+                <h3>三、判断题（每题<span>2</span>分）</h3>
+                <ul class="qs-container">
+
+                <li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">1.</span>
+                        <span>vue中存在路由守卫</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">Vue</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">√</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">2.</span>
+                        <span>字符串对象是常用的对象之一，可提供诸多方法实现字符串检查、抽取、连接、分隔等字符串相关操作。</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">√</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">3.</span>
+                        <span>在JavaScript中对象分为内置对象、宿主对象和自定义对象三种。</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">√</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">4.</span>
+                        <span>字符串对象方法toLowerCase()，是将字符串对象转换为大写。</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">×</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li></ul>
+            </div>
+            <div class="exam-item" id="iqs">
+                <h3>四、填空题（每题<span>3</span>分）</h3>
+                <ul class="qs-container">
+
+                <li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">1.</span>
+                        <span>HTML表格标签是</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">html</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">&lt;table&gt;</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">2.</span>
+                        <span>为了达到同一组单选按钮的互斥效果，______属性值必须相同。</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">html</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">name</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">3.</span>
+                        <span>CSS样式中的padding属性表示_____</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">css</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">内填充距离 </span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">4.</span>
+                        <span>CSS中类选择符是html标签中_______属性的值。</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">css</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">class </span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">5.</span>
+                        <span>page指令中的_________属性是可以使用多次的。</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">html</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">import</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>无解析</p>
+                </div>
+                </li></ul>
+            </div>
+            <div class="exam-item" id="saqs">
+                <h3>五、简单题（每题<span>10</span>分）</h3>
+                <ul class="qs-container">
+
+                <li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">1.</span>
+                        <span>网页三要素是什么？</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">html</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">无解析</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>HTML(内容)
+CSS(外观)
+Javascript(行为)</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">2.</span>
+                        <span>说几个系统预定义函数</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">无解析</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>parseInt() / parseFloat() : 将一个字符串转为数字
+isNaN() : 判断是否不是一个数值或者数值类型字符串
+encodeURI() / decodeURI(): 对字符串进行编码与解码
+eval() : 将JS代码格式的字符串当作js执行
+setInterval(callback,m)间隔多久执行一次callback函数</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">3.</span>
+                        <span>讲下DOM对象的三种查询方式</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">js基础</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">无解析</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>getElementById()根据元素id来查找 ,
+getElementsByTagName(tag):根据元素的tag名字来查找 
+getElementsByName(name) 根据元素名字来查找</p>
+                </div>
+                </li><li>
+                <div class="q-Question">
+                    <div class="q-stem">
+                        <span class="q-sort">4.</span>
+                        <span>请简述什么是Vue</span>
+                    </div>
+                </div>
+                <div class="q-Subject q-info">
+                    <span class="q-info-title">类别: </span>
+                    <span class="q-info-content">Vue</span>
+                </div>
+                <div class="q-Answer q-info">
+                    <span class="q-info-title">答案: </span>
+                    <span class="q-info-content">无解析</span>
+                </div>
+                <div class="q-Analysis">
+                    <span><i>解析</i></span>
+                    <p>Vue（读音/Vjuː/，类似于View）是一套用于构建用户界面的渐进式框架，与其他大型框架相比，Vue被设计为可以自底向上逐层应用。
+其他大型框架往往一开始就对项目的技术方案进行强制性的要求，而Vue更加灵活，开发者既可以选择使用Vue来开发一个全新项目，也可以将Vue引入到一个现有的项目中。
+Vue；两大特点：响应式编程，组件化</p>
+                </div>
+                </li></ul>
+            </div>
+            <div class="exam-item" id="pqs">
+                <h3>六、程序题（每题<span>10</span>分）</h3>
+                <ul class="qs-container">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>

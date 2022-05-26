@@ -44,8 +44,4 @@ public class QuestionDetailVo {
      * 问题的选项
      */
     private List<QuestionOption> options;
-    /**
-     * 问题的答案,选项的id组成的数组
-     */
-    private List<String> answers = new ArrayList<>();
 }

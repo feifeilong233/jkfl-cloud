@@ -6,8 +6,8 @@ spring:
     name: exam-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: jkfl
-    password: mazi926
+    username: root
+    password: mazi926*
     url: jdbc:mysql://127.0.0.1:3306/jkfl?serverTimezone=GMT%2B8
     hikari:
       #连接池名

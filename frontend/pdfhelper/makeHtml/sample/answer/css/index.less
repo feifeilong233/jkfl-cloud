@@ -1,0 +1,98 @@
+html {
+    font-size: 16px;
+    color: #333;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#paper {
+    h1 {
+        text-align: center;
+    }
+
+    #paper-container {
+        .exam-item {
+            margin-bottom: 2rem;
+
+            .qs-container {
+                width: 95%;
+                margin: 0 auto;
+
+                &>li {
+                    margin-bottom: 1.2rem;
+
+                    &>div:not(:last-child) {
+                        margin-bottom: .4rem;
+                    }
+                }
+
+                .q-info {
+                    font-size: 0.9rem;
+                    .q-info-title {
+                        font-weight: bold;
+                    }
+                    .q-info-content {
+                        text-decoration: underline;
+                    }
+                }
+
+                .q-Subject {
+                    font-size: 0.8rem;
+                }
+
+                .q-Answer {
+                    .q-info-title {
+                        color: red;
+                    }
+                    .q-info-content {
+                        font-size: 1rem;
+                        text-decoration: none;
+                    }
+                }
+
+                .q-Analysis {
+                    margin-top: 1rem;
+                    padding: 0.1px;
+                    padding-left: 3rem;
+                    padding-right: 2rem;
+                    background-color: #eee;
+                    border-left: #333 solid .6rem;
+                    position: relative;
+
+                    &>span {
+                        display: inline-block;
+                        font-size: 0.9rem;
+                        color: #999;
+                        position: absolute;
+                        left: .8rem;
+                    }
+                    &>p {
+                        line-height: 2rem;
+                    }
+                }
+            }
+        }
+
+        #sqs, #mqs {
+            .q-Question {
+                margin-bottom: .5rem;
+
+                .q-stem {
+                    margin-bottom: .5rem;
+                }
+
+                ul {
+                    margin-left: 1.1rem;
+                    li {
+                        line-height: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -27,9 +27,6 @@ import QueryQuestion from "./q_checkin/query_question";
 import ChooseQuestions from './p_manage/add_paper.js';
 import QueryPaper from "./p_manage/query_paper";
 
-//成绩查询
-import ScoreSearch from './score_search/index.js';
-
 //学生管理组件
 import AddStudent from './student_manage/add_student'
 import QueryStudent from './student_manage/query_student'
@@ -39,6 +36,8 @@ import CreateExam from './paper_manage/create_exam.js';
 import ScoringPaper from './paper_manage/scoring_paper.js';
 import AllPapers from './paper_manage/all_papers.js';
 import ReadingPaper from './paper_manage/reading_paper.js';
+import SearchScore from './paper_manage/score_search.js';
+import StudentLook from './paper_manage/look_student.js';
 
 //个人中心
 import ChangePassword from './personal_center/change_password';
@@ -78,9 +77,6 @@ class Main extends React.Component {
 			let arr = this.props.location.pathname.split('/');
 			let str = arr[arr.length-1];
 			this.setState({defaultSelectedKeys : [str]})
-		}
-		else if(this.props.location.pathname.indexOf('/main/score_search') != -1) {//成绩查询
-			this.setState({defaultSelectedKeys : ['score_search']})
 		}
 		else if(this.props.location.pathname.indexOf('/main/student_manage') != -1) {//学生管理
 			this.setState({defaultOpenKeys : ['student_manage']})
@@ -197,12 +193,6 @@ class Main extends React.Component {
 										<Menu.Item key='manual_paper'><Link to='/main/p_manage/manual_paper'>手动出卷</Link></Menu.Item>
 										<Menu.Item key="manage_paper"><Link to="/main/p_manage/query_paper">我的试卷</Link></Menu.Item>
 									</SubMenu>
-									<Menu.Item key="score_search">
-										<Link to="/main/score_search">
-											<Icon type="search" />
-											<span>成绩查询</span>
-										</Link>
-									</Menu.Item>
 									<SubMenu key="student_manage" title={<span><Icon type="usergroup-add" /><span>学生管理</span></span>}>
 										<Menu.Item key="add_student"><Link to="/main/student_manage/add_student">添加学生</Link></Menu.Item>
 										<Menu.Item key="query_student"><Link to="/main/student_manage/query_student">查询学生</Link></Menu.Item>
@@ -234,8 +224,6 @@ class Main extends React.Component {
 							<Route path='/main/p_manage/manual_paper' component={ManualPaper}/>
 							<Route path="/main/p_manage/query_paper" component={QueryPaper}/>
 
-							<Route path="/main/score_search" component={ScoreSearch}/>
-
 							{/* 学生管理 */}
 							<Route path="/main/student_manage/add_student" component={AddStudent}/>
 							<Route path="/main/student_manage/query_student" component={QueryStudent}/>
@@ -246,6 +234,8 @@ class Main extends React.Component {
 							<Route path="/main/paper_manage/scoring/all_papers/:paperId/:classId/:examId" component={AllPapers}/>
 							<Route path="/main/paper_manage/scoring" component={ScoringPaper}/>
 							<Route path="/main/paper_manage/exam_look" component={ExamLook}/>
+							<Route path="/main/paper_manage/score_search" component={SearchScore}/>
+							<Route path="/main/paper_manage/look_student" component={StudentLook}/>
 
 							{/* 个人中心 */}
 							<Route path="/main/personal_center/change_password" component={ChangePassword}/>
