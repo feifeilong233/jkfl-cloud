@@ -11,7 +11,7 @@
  Target Server Version : 80025
  File Encoding         : 65001
 
- Date: 24/05/2022 23:23:27
+ Date: 27/05/2022 13:14:42
 */
 
 SET NAMES utf8mb4;
@@ -120,5 +120,67 @@ CREATE TABLE `edu_user_book`  (
 -- Records of edu_user_book
 -- ----------------------------
 INSERT INTO `edu_user_book` VALUES ('d7243f7a42c72f579399db674cd1a594', '79392778a90d4639a297dbd0bae0f779', '95a5af39bc31403eaee3dd55d0f8c36c', '049fa67e3b37444293d8f05e8c51ba28');
+
+-- ----------------------------
+-- Table structure for edu_video
+-- ----------------------------
+DROP TABLE IF EXISTS `edu_video`;
+CREATE TABLE `edu_video`  (
+  `vdo_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `vdo_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '标题',
+  `vdo_author_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '上传者id',
+  `vdo_photo` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '封面',
+  `vdo_path` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '路径',
+  `vdo_label` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '标签',
+  `create_time` datetime NULL DEFAULT NULL,
+  `update_time` datetime NULL DEFAULT NULL,
+  `version` int NULL DEFAULT NULL,
+  `deleted` int NULL DEFAULT NULL,
+  `vdo_collection` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '视频的集合名称',
+  PRIMARY KEY (`vdo_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of edu_video
+-- ----------------------------
+INSERT INTO `edu_video` VALUES ('3d34017447d745519ac30a0ca55176f0', '2-1 Introduction', 'oD4p-5InZyBZ5wX1Dba5Ol56PGZc', 'https://s1.ax1x.com/2022/05/25/Xk4wwT.png', 'http://localhost:8055/jkfl-cloud/data/upload/video/1653499347446.mp4', '技术', '2022-05-26 01:22:28', '2022-05-26 01:22:28', 1, 0, '前后端分离-实战wiki知识库系统');
+INSERT INTO `edu_video` VALUES ('9d314a8f598741d9bdac43ad260b4017', '2-2 initialize SpringBoot projection', 'oD4p-5InZyBZ5wX1Dba5Ol56PGZc', 'https://s1.ax1x.com/2022/05/25/Xk4wwT.png', 'http://localhost:8055/jkfl-cloud/data/upload/video/1653499409209.mp4', '技术', '2022-05-26 01:23:29', '2022-05-26 01:23:29', 1, 0, '前后端分离-实战wiki知识库系统');
+INSERT INTO `edu_video` VALUES ('b5597db51f2a497eb79099de397ef1cd', '2-7 Test the interface using the HTTP Client', 'oD4p-5InZyBZ5wX1Dba5Ol56PGZc', 'https://s1.ax1x.com/2022/05/25/Xk4wwT.png', 'http://localhost:8055/jkfl-cloud/data/upload/video/1653499470931.mp4', '技术', '2022-05-26 01:24:31', '2022-05-26 01:24:31', 1, 0, '前后端分离-实战wiki知识库系统');
+INSERT INTO `edu_video` VALUES ('c7de30890ebf434c883606694db02ed4', '2-3 Initial configuration of the project', 'oD4p-5InZyBZ5wX1Dba5Ol56PGZc', 'https://s1.ax1x.com/2022/05/25/Xk4wwT.png', 'http://localhost:8055/jkfl-cloud/data/upload/video/1653499421966.mp4', '技术', '2022-05-26 01:23:42', '2022-05-26 01:23:42', 1, 0, '前后端分离-实战wiki知识库系统');
+INSERT INTO `edu_video` VALUES ('d17bde056f8640d782ee51eebed1b928', '2-6 Developed the Hello World interface', 'oD4p-5InZyBZ5wX1Dba5Ol56PGZc', 'https://s1.ax1x.com/2022/05/25/Xk4wwT.png', 'http://localhost:8055/jkfl-cloud/data/upload/video/1653499457929.mp4', '技术', '2022-05-26 01:24:18', '2022-05-26 01:24:18', 1, 0, '前后端分离-实战wiki知识库系统');
+INSERT INTO `edu_video` VALUES ('d5dde6ceee3d4c88b67c97ea541c8279', '2-8 SpringBoot yaml', 'oD4p-5InZyBZ5wX1Dba5Ol56PGZc', 'https://s1.ax1x.com/2022/05/25/Xk4wwT.png', 'http://localhost:8055/jkfl-cloud/data/upload/video/1653499482909.mp4', '技术', '2022-05-26 01:24:43', '2022-05-26 01:24:43', 1, 0, '前后端分离-实战wiki知识库系统');
+INSERT INTO `edu_video` VALUES ('d8ad8c766f9a4704894e322cc303afae', '2-5 Start log optimization', 'oD4p-5InZyBZ5wX1Dba5Ol56PGZc', 'https://s1.ax1x.com/2022/05/25/Xk4wwT.png', 'http://localhost:8055/jkfl-cloud/data/upload/video/1653499445178.mp4', '技术', '2022-05-26 01:24:05', '2022-05-26 01:24:05', 1, 0, '前后端分离-实战wiki知识库系统');
+INSERT INTO `edu_video` VALUES ('e29e07b863e34da08e4108cd0035ff79', '2-4 Code associated with Git', 'oD4p-5InZyBZ5wX1Dba5Ol56PGZc', 'https://s1.ax1x.com/2022/05/25/Xk4wwT.png', 'http://localhost:8055/jkfl-cloud/data/upload/video/1653499433561.mp4', '技术', '2022-05-26 01:23:54', '2022-05-26 01:23:54', 1, 0, '前后端分离-实战wiki知识库系统');
+INSERT INTO `edu_video` VALUES ('e2e74707b7cb4c65b990a572e681fd93', '2-10 Test JUnit', 'oD4p-5InZyBZ5wX1Dba5Ol56PGZc', 'https://s1.ax1x.com/2022/05/25/Xk4wwT.png', 'http://localhost:8055/jkfl-cloud/data/upload/video/1653499587353.mp4', '技术', '2022-05-26 01:26:27', '2022-05-26 01:26:27', 1, 0, '前后端分离-实战wiki知识库系统');
+INSERT INTO `edu_video` VALUES ('e770e790bec44141915923149e4e7657', '2-9 devtools', 'oD4p-5InZyBZ5wX1Dba5Ol56PGZc', 'https://s1.ax1x.com/2022/05/25/Xk4wwT.png', 'http://localhost:8055/jkfl-cloud/data/upload/video/1653499494342.mp4', '技术', '2022-05-26 01:24:54', '2022-05-26 01:24:54', 1, 0, '前后端分离-实战wiki知识库系统');
+INSERT INTO `edu_video` VALUES ('f6ade79db5604861987fa54d654c7d6c', '2-11 view wx projection', 'oD4p-5InZyBZ5wX1Dba5Ol56PGZc', 'https://s1.ax1x.com/2022/05/25/Xk4wwT.png', 'http://localhost:8055/jkfl-cloud/data/upload/video/1653543241298.mp4', '技术', '2022-05-26 13:34:03', '2022-05-26 13:34:03', 1, 0, '前后端分离-实战wiki知识库系统');
+
+-- ----------------------------
+-- Table structure for edu_video_info
+-- ----------------------------
+DROP TABLE IF EXISTS `edu_video_info`;
+CREATE TABLE `edu_video_info`  (
+  `vdo_info_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `vdo_info_watch` int NULL DEFAULT NULL COMMENT '观看人数',
+  `vdo_info_good` int NULL DEFAULT NULL COMMENT '点赞',
+  `vdo_info_collect` int NULL DEFAULT NULL COMMENT '收藏',
+  `vdo_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`vdo_info_id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of edu_video_info
+-- ----------------------------
+INSERT INTO `edu_video_info` VALUES ('0aaf8a826062d18848003a6101281570', 0, 0, 0, 'b5597db51f2a497eb79099de397ef1cd');
+INSERT INTO `edu_video_info` VALUES ('276013635c0bc26824cfa7986c6c82f9', 0, 0, 0, 'd5dde6ceee3d4c88b67c97ea541c8279');
+INSERT INTO `edu_video_info` VALUES ('2ccc00fff89c4a3e94be4f53882a0e5b', 0, 0, 0, 'e29e07b863e34da08e4108cd0035ff79');
+INSERT INTO `edu_video_info` VALUES ('62d467e3700f69f8440943f2db78ffea', 0, 0, 0, '9d314a8f598741d9bdac43ad260b4017');
+INSERT INTO `edu_video_info` VALUES ('926450d99e9d286ecd3c176245ee9585', 0, 0, 0, 'e2e74707b7cb4c65b990a572e681fd93');
+INSERT INTO `edu_video_info` VALUES ('95981fa79bd072e131c867d8f8f2c37a', 0, 0, 0, 'c7de30890ebf434c883606694db02ed4');
+INSERT INTO `edu_video_info` VALUES ('abcfc57301eafc6afffd7655873f2175', 0, 0, 0, 'e770e790bec44141915923149e4e7657');
+INSERT INTO `edu_video_info` VALUES ('adaa22704a1903f94fd30a63f0a53f8d', 0, 0, 0, 'f6ade79db5604861987fa54d654c7d6c');
+INSERT INTO `edu_video_info` VALUES ('d03bee1f13d5234ae17fdd365eb97988', 0, 0, 0, 'd8ad8c766f9a4704894e322cc303afae');
+INSERT INTO `edu_video_info` VALUES ('fc143a00f0d76c48db68f21fa232336d', 0, 0, 0, 'd17bde056f8640d782ee51eebed1b928');
+INSERT INTO `edu_video_info` VALUES ('fe0e5f15ffa6d3321620075e72c8455d', 0, 0, 0, '3d34017447d745519ac30a0ca55176f0');
 
 SET FOREIGN_KEY_CHECKS = 1;

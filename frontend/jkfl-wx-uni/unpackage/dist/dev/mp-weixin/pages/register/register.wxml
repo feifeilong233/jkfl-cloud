@@ -1,0 +1,1 @@
+<view><image src="/static/logo-2.png" mode="widthFix" class="logo"></image><view class="register-container"><input type="text" placeholder="请输入你的邀请码" class="register-code" maxlength="6" value="{{a}}" bindinput="{{b}}"/><view class="register-desc">学院教师创建学生账号之后，你可以在你的个人邮箱中获得注册邀请码</view><button class="register-btn" open-type="getUserInfo" bindtap="{{c}}">执行注册</button></view></view>

@@ -1,0 +1,1 @@
+<view class="page"><uni-list u-s="{{['d']}}" u-i="0a199402-0" bind:__l="__l"><uni-list-chat wx:for="{{a}}" wx:for-item="one" wx:key="b" u-s="{{['d']}}" u-i="{{one.c}}" bind:__l="__l" u-p="{{one.d}}"><view class="chat-custom-right"><text class="chat-custom-text">{{one.a}}</text></view></uni-list-chat></uni-list></view>

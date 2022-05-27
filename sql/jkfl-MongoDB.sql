@@ -1,0 +1,1862 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : xiyeDB
+ Source Server Type    : MongoDB
+ Source Server Version : 50006
+ Source Host           : localhost:27017
+ Source Schema         : jkfl
+
+ Target Server Type    : MongoDB
+ Target Server Version : 50006
+ File Encoding         : 65001
+
+ Date: 27/05/2022 13:13:25
+*/
+
+
+// ----------------------------
+// Collection structure for message
+// ----------------------------
+db.getCollection("message").drop();
+db.createCollection("message");
+
+// ----------------------------
+// Documents of message
+// ----------------------------
+db.getCollection("message").insert([ {
+    _id: ObjectId("600bea9ab5bafb311f147506"),
+    uuid: "bfcb7c47-5886-c528-5127-ce285bc2322a",
+    senderId: 0,
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "JKFL Teach",
+    msg: "Test...",
+    sendTime: ISODate("2022-05-24T17:21:30.000Z")
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dbe0bc0b51165cdb76c9e"),
+    uuid: "c5d465f0ff294fab815f10b01a2ac438",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:26:35.018Z"),
+    msg: "欢迎您注册成为超级管理员，请及时更新你的员工个人信息。",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf90d"),
+    uuid: "414eb05e9e424fee9da38a27a1754194",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.577Z"),
+    msg: "这是第1条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf90f"),
+    uuid: "7a92ee6cb95741a594cc5e7c285340ca",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.684Z"),
+    msg: "这是第2条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf911"),
+    uuid: "58160e51ee104a43be4ad64884168b03",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.686Z"),
+    msg: "这是第3条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf913"),
+    uuid: "2434fd8b2ec54573bf8cd08c0e6fad3f",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.687Z"),
+    msg: "这是第4条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf915"),
+    uuid: "b0d80fe05ee5415c9ee10704f2388b1b",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.688Z"),
+    msg: "这是第5条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf917"),
+    uuid: "6b4e8d64ae054cc99e72976fe19cab5a",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.689Z"),
+    msg: "这是第6条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf919"),
+    uuid: "4ab211ecb4eb4eaaaa299d5165ea3602",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.691Z"),
+    msg: "这是第7条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf91b"),
+    uuid: "e6a34ca93cf6424ba9aef2e4d6519779",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.692Z"),
+    msg: "这是第8条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf91d"),
+    uuid: "f753f0cf355a428bbe537337ca3e7977",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.693Z"),
+    msg: "这是第9条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf91f"),
+    uuid: "8dd8728377ef4ca287718e4388f75726",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.695Z"),
+    msg: "这是第10条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf921"),
+    uuid: "c480e024111b42e7a80836faae3730d2",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.696Z"),
+    msg: "这是第11条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf923"),
+    uuid: "56ff93e48af54b89a41d1245e5f5243b",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.697Z"),
+    msg: "这是第12条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf925"),
+    uuid: "c76d3d4ad1fb4610975b9ecee31df5a3",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.698Z"),
+    msg: "这是第13条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf927"),
+    uuid: "c0b2c7d1fb7e41b2a274c1a3474ba121",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.699Z"),
+    msg: "这是第14条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf929"),
+    uuid: "a40bb6370fca44a5b0d4e01c2806f71d",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.701Z"),
+    msg: "这是第15条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf92b"),
+    uuid: "a566faa79bc24e39ab3297b828dca5c4",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.702Z"),
+    msg: "这是第16条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf92d"),
+    uuid: "8d43a80cba3149478b79be42a64ad88b",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.703Z"),
+    msg: "这是第17条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf92f"),
+    uuid: "b099771e40914769b450d03016e7ccc0",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.705Z"),
+    msg: "这是第18条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf931"),
+    uuid: "a0b70bc6ef504411af379abd6fc8d430",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.706Z"),
+    msg: "这是第19条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf933"),
+    uuid: "ee6a8a7559ff470aaf92eadae50d70bf",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.707Z"),
+    msg: "这是第20条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf935"),
+    uuid: "50c2a96745a34b35ace8bc94590b4f6f",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.708Z"),
+    msg: "这是第21条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf937"),
+    uuid: "bd701ca12a85439c8aaf8f93ff5961af",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.709Z"),
+    msg: "这是第22条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf939"),
+    uuid: "421ef97b47734a31b820efcff5a22dc5",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.71Z"),
+    msg: "这是第23条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf93b"),
+    uuid: "6dbf74026b584230a42e0f5729334e9e",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.711Z"),
+    msg: "这是第24条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf93d"),
+    uuid: "234f8d32d56b4cd78609c975b7bb9574",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.712Z"),
+    msg: "这是第25条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf93f"),
+    uuid: "c5244deab1de4e0d9e0ddb1613961366",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.713Z"),
+    msg: "这是第26条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf941"),
+    uuid: "b201cc576f424636b0bfe133b5a6af41",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.714Z"),
+    msg: "这是第27条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf943"),
+    uuid: "59054b6a0ce04efe822fe3b98db82918",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.715Z"),
+    msg: "这是第28条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf945"),
+    uuid: "0474d12a6f534ec5a90563283415ef73",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.716Z"),
+    msg: "这是第29条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf947"),
+    uuid: "459b4225fd2f47d09fa40bb9603f9aa9",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.717Z"),
+    msg: "这是第30条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf949"),
+    uuid: "e97d2332e8b84d66af82fc0eaed2fc2f",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.718Z"),
+    msg: "这是第31条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf94b"),
+    uuid: "66cdb9b7782c4b25a0eba818dc1bcdb6",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.719Z"),
+    msg: "这是第32条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf94d"),
+    uuid: "0ac28eb9608549b9b97f04f87accf5dc",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.72Z"),
+    msg: "这是第33条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf94f"),
+    uuid: "1e635efa0a1a4dc4a22148356b3fe4d6",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.721Z"),
+    msg: "这是第34条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf951"),
+    uuid: "cd8d059adb8449cba5ee911924a5df6f",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.721Z"),
+    msg: "这是第35条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf953"),
+    uuid: "0048fd29b6524d0a9c657b29d3d559db",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.722Z"),
+    msg: "这是第36条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf955"),
+    uuid: "580504bd76e440e089ec48b32e77d595",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.723Z"),
+    msg: "这是第37条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf957"),
+    uuid: "24d3f0ec7d2d42878c58ad62a2ae9211",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.724Z"),
+    msg: "这是第38条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf959"),
+    uuid: "49196dbee1d54705b6b61d140a0ab73b",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.725Z"),
+    msg: "这是第39条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf95b"),
+    uuid: "bee04f7ffd194dcaa01e6aa6ef5c9fb2",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.726Z"),
+    msg: "这是第40条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf95d"),
+    uuid: "57af6442596b4c98a9587f2d8e16c72e",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.727Z"),
+    msg: "这是第41条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf95f"),
+    uuid: "0a222a8fea1f4d61a6d4c463d7a82a1d",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.728Z"),
+    msg: "这是第42条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf961"),
+    uuid: "ef448c25b59c4c048bea3a3c4e33b634",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.729Z"),
+    msg: "这是第43条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf963"),
+    uuid: "98aaaa0a2e1646b598d52c98b6248dd8",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.731Z"),
+    msg: "这是第44条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf965"),
+    uuid: "db946dbc48eb464985fd2c0d5f4752ca",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.732Z"),
+    msg: "这是第45条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf967"),
+    uuid: "f9fe91f8fefd4c70b92cd5fa693de6da",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.733Z"),
+    msg: "这是第46条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf969"),
+    uuid: "2b5ef263afc6442382801f84a2f762c6",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.734Z"),
+    msg: "这是第47条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf96b"),
+    uuid: "c847818056884a5b80214c9180cd2e99",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.735Z"),
+    msg: "这是第48条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf96d"),
+    uuid: "348b7b31d05a4046a6b332c2c2f837c2",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.736Z"),
+    msg: "这是第49条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf96f"),
+    uuid: "10bed033aefc4ba6abe571122584d775",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.736Z"),
+    msg: "这是第50条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf971"),
+    uuid: "d628c34df9f24e73b3b53942e060ac3e",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.737Z"),
+    msg: "这是第51条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf973"),
+    uuid: "9b3397a80de0454cb0121f6f1674ce68",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.738Z"),
+    msg: "这是第52条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf975"),
+    uuid: "4269d966a8324f8dbf93d8b4bc26e9c3",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.739Z"),
+    msg: "这是第53条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf977"),
+    uuid: "d62089c1224d4472a39d99d9e353a387",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.74Z"),
+    msg: "这是第54条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf979"),
+    uuid: "7fe4a622f1a44b1db4a636f402a2731b",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.741Z"),
+    msg: "这是第55条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf97b"),
+    uuid: "60221ada6fda431d9427034e92620e47",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.742Z"),
+    msg: "这是第56条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf97d"),
+    uuid: "2a63710468734edc853f87d9e1739a2c",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.743Z"),
+    msg: "这是第57条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf97f"),
+    uuid: "16da0b88ed4c4d27bfc98c11c0b5553b",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.743Z"),
+    msg: "这是第58条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf981"),
+    uuid: "3ed15a67bb1c4908b405f3913365db5d",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.744Z"),
+    msg: "这是第59条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf983"),
+    uuid: "483e986e499b470381f356cc782205e2",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.745Z"),
+    msg: "这是第60条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf985"),
+    uuid: "9e6ec1e905ae43af997cab43a35213b3",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.746Z"),
+    msg: "这是第61条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf987"),
+    uuid: "4fb46faea6fe4146b2a5d69bcf0da2eb",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.747Z"),
+    msg: "这是第62条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf989"),
+    uuid: "7407c499808e4075a30a56308c6bf9e7",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.748Z"),
+    msg: "这是第63条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf98b"),
+    uuid: "5bcd02f8e4724bb89271306eba1a5bbc",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.749Z"),
+    msg: "这是第64条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf98d"),
+    uuid: "28711036ec8b4ca5928a44ad60109748",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.75Z"),
+    msg: "这是第65条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf98f"),
+    uuid: "17d8540e64ec49ba8fb9c44d5f1fae3e",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.751Z"),
+    msg: "这是第66条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf991"),
+    uuid: "f330afb8a5394adcbd3ead2bf96ce230",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.752Z"),
+    msg: "这是第67条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf993"),
+    uuid: "ab955e54cb384a4a897860c83deaaf30",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.752Z"),
+    msg: "这是第68条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf995"),
+    uuid: "0e17f42e2d36491d8a789a30a8046dd7",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.753Z"),
+    msg: "这是第69条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf997"),
+    uuid: "0c2f733ea00a43fca746f11305766a25",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.754Z"),
+    msg: "这是第70条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf999"),
+    uuid: "66cc94f4d99c48229761e7455f6cc0cd",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.755Z"),
+    msg: "这是第71条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf99b"),
+    uuid: "cc1f7b003b9b443ebe1d989de2bd910b",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.755Z"),
+    msg: "这是第72条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf99d"),
+    uuid: "718d49c74d234383850cd19756ab902e",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.756Z"),
+    msg: "这是第73条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf99f"),
+    uuid: "a7ad7a5aabc447d6896dbf7074307883",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.757Z"),
+    msg: "这是第74条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9a1"),
+    uuid: "350da7e337ff4f6fa2c1385bc32eec92",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.758Z"),
+    msg: "这是第75条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9a3"),
+    uuid: "e5ead601deca4d3aa75b38cf6b085e6a",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.758Z"),
+    msg: "这是第76条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9a5"),
+    uuid: "702123ae7b3b4d6b9d241183736b3f58",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.759Z"),
+    msg: "这是第77条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9a7"),
+    uuid: "5a920c7316a34f10819552796c9923eb",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.76Z"),
+    msg: "这是第78条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9a9"),
+    uuid: "233e650915b14ff592019634f6e6d163",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.761Z"),
+    msg: "这是第79条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9ab"),
+    uuid: "fcd49f65ccaa49f3bb16064997e2a427",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.761Z"),
+    msg: "这是第80条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9ad"),
+    uuid: "b901f80e134a4d73a05a9110ba54d756",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.762Z"),
+    msg: "这是第81条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9af"),
+    uuid: "e40f4209947c4a51a7eecd5da022d94a",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.763Z"),
+    msg: "这是第82条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9b1"),
+    uuid: "5d203832bfc74cc0b2c49968f1ef3393",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.764Z"),
+    msg: "这是第83条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9b3"),
+    uuid: "ac207f61641a416caa2bb6ba24eee47d",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.765Z"),
+    msg: "这是第84条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9b5"),
+    uuid: "2ece43367803490996df2b9c221c0fb2",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.765Z"),
+    msg: "这是第85条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9b7"),
+    uuid: "cea6dc4857494bb69a2ba4e4b05cbbc5",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.766Z"),
+    msg: "这是第86条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9b9"),
+    uuid: "3083a7e968aa4755a76f44733719f049",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.767Z"),
+    msg: "这是第87条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9bb"),
+    uuid: "60e2200e2b4a431294b2e27b872e701d",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.768Z"),
+    msg: "这是第88条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9bd"),
+    uuid: "cf3c553f1a4c4bc5a8972e7b191539f1",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.769Z"),
+    msg: "这是第89条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9bf"),
+    uuid: "4c2535aab47c4a0c9b2892900c3624e5",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.769Z"),
+    msg: "这是第90条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9c1"),
+    uuid: "62a0d3f8e72f4d008e0f18c77559a073",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.77Z"),
+    msg: "这是第91条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9c3"),
+    uuid: "c36062edb4c147418fdab56ea5172b1a",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.771Z"),
+    msg: "这是第92条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9c5"),
+    uuid: "6e7404791e634cd2a6f48aa7d8c8e0a9",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.772Z"),
+    msg: "这是第93条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9c7"),
+    uuid: "1ed78c41ad6140349546c45f5cb9d0ba",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.772Z"),
+    msg: "这是第94条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9c9"),
+    uuid: "c091ffce4ce042f289afee20030d6ac9",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.773Z"),
+    msg: "这是第95条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9cb"),
+    uuid: "5106eb0547714753aad5231b1d0d4496",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.774Z"),
+    msg: "这是第96条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9cd"),
+    uuid: "b169dcac4e6642f0973f8c83c43e39cc",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.775Z"),
+    msg: "这是第97条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9cf"),
+    uuid: "4b10c6863c434eed8370fdfed829db67",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.775Z"),
+    msg: "这是第98条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9d1"),
+    uuid: "fd3abdc26e084c9dbd5884b86e4fa517",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.776Z"),
+    msg: "这是第99条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+db.getCollection("message").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9d3"),
+    uuid: "94b7e66b54ea40549a77db1b287eca0f",
+    senderId: NumberInt("0"),
+    senderPhoto: "https://s1.ax1x.com/2022/05/24/XPxVpT.jpg",
+    senderName: "系统消息",
+    sendTime: ISODate("2022-05-25T13:41:22.777Z"),
+    msg: "这是第100条测试消息",
+    _class: "xion.boot.online.entity.MessageEntity"
+} ]);
+
+// ----------------------------
+// Collection structure for message_ref
+// ----------------------------
+db.getCollection("message_ref").drop();
+db.createCollection("message_ref");
+
+// ----------------------------
+// Documents of message_ref
+// ----------------------------
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("600beaf0d6310000830036f3"),
+    messageId: "600bea9ab5bafb311f147506",
+    receiverId: 1,
+    readFlag: false,
+    lastFlag: true
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf90e"),
+    messageId: "628dc18273d5796acafaf90d",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf910"),
+    messageId: "628dc18273d5796acafaf90f",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf912"),
+    messageId: "628dc18273d5796acafaf911",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf914"),
+    messageId: "628dc18273d5796acafaf913",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf916"),
+    messageId: "628dc18273d5796acafaf915",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf918"),
+    messageId: "628dc18273d5796acafaf917",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf91a"),
+    messageId: "628dc18273d5796acafaf919",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf91c"),
+    messageId: "628dc18273d5796acafaf91b",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf91e"),
+    messageId: "628dc18273d5796acafaf91d",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf920"),
+    messageId: "628dc18273d5796acafaf91f",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf922"),
+    messageId: "628dc18273d5796acafaf921",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf924"),
+    messageId: "628dc18273d5796acafaf923",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf926"),
+    messageId: "628dc18273d5796acafaf925",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf928"),
+    messageId: "628dc18273d5796acafaf927",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf92a"),
+    messageId: "628dc18273d5796acafaf929",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf92c"),
+    messageId: "628dc18273d5796acafaf92b",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf92e"),
+    messageId: "628dc18273d5796acafaf92d",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf930"),
+    messageId: "628dc18273d5796acafaf92f",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf932"),
+    messageId: "628dc18273d5796acafaf931",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf934"),
+    messageId: "628dc18273d5796acafaf933",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf936"),
+    messageId: "628dc18273d5796acafaf935",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf938"),
+    messageId: "628dc18273d5796acafaf937",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf93a"),
+    messageId: "628dc18273d5796acafaf939",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf93c"),
+    messageId: "628dc18273d5796acafaf93b",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf93e"),
+    messageId: "628dc18273d5796acafaf93d",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf940"),
+    messageId: "628dc18273d5796acafaf93f",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf942"),
+    messageId: "628dc18273d5796acafaf941",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf944"),
+    messageId: "628dc18273d5796acafaf943",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf946"),
+    messageId: "628dc18273d5796acafaf945",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf948"),
+    messageId: "628dc18273d5796acafaf947",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf94a"),
+    messageId: "628dc18273d5796acafaf949",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf94c"),
+    messageId: "628dc18273d5796acafaf94b",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf94e"),
+    messageId: "628dc18273d5796acafaf94d",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf950"),
+    messageId: "628dc18273d5796acafaf94f",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf952"),
+    messageId: "628dc18273d5796acafaf951",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf954"),
+    messageId: "628dc18273d5796acafaf953",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf956"),
+    messageId: "628dc18273d5796acafaf955",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf958"),
+    messageId: "628dc18273d5796acafaf957",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf95a"),
+    messageId: "628dc18273d5796acafaf959",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf95c"),
+    messageId: "628dc18273d5796acafaf95b",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf95e"),
+    messageId: "628dc18273d5796acafaf95d",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf960"),
+    messageId: "628dc18273d5796acafaf95f",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf962"),
+    messageId: "628dc18273d5796acafaf961",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf964"),
+    messageId: "628dc18273d5796acafaf963",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf966"),
+    messageId: "628dc18273d5796acafaf965",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf968"),
+    messageId: "628dc18273d5796acafaf967",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf96a"),
+    messageId: "628dc18273d5796acafaf969",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf96c"),
+    messageId: "628dc18273d5796acafaf96b",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf96e"),
+    messageId: "628dc18273d5796acafaf96d",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf970"),
+    messageId: "628dc18273d5796acafaf96f",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf972"),
+    messageId: "628dc18273d5796acafaf971",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf974"),
+    messageId: "628dc18273d5796acafaf973",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf976"),
+    messageId: "628dc18273d5796acafaf975",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf978"),
+    messageId: "628dc18273d5796acafaf977",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf97a"),
+    messageId: "628dc18273d5796acafaf979",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf97c"),
+    messageId: "628dc18273d5796acafaf97b",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf97e"),
+    messageId: "628dc18273d5796acafaf97d",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf980"),
+    messageId: "628dc18273d5796acafaf97f",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf982"),
+    messageId: "628dc18273d5796acafaf981",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf984"),
+    messageId: "628dc18273d5796acafaf983",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf986"),
+    messageId: "628dc18273d5796acafaf985",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf988"),
+    messageId: "628dc18273d5796acafaf987",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf98a"),
+    messageId: "628dc18273d5796acafaf989",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf98c"),
+    messageId: "628dc18273d5796acafaf98b",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf98e"),
+    messageId: "628dc18273d5796acafaf98d",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf990"),
+    messageId: "628dc18273d5796acafaf98f",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf992"),
+    messageId: "628dc18273d5796acafaf991",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf994"),
+    messageId: "628dc18273d5796acafaf993",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf996"),
+    messageId: "628dc18273d5796acafaf995",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf998"),
+    messageId: "628dc18273d5796acafaf997",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf99a"),
+    messageId: "628dc18273d5796acafaf999",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf99c"),
+    messageId: "628dc18273d5796acafaf99b",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf99e"),
+    messageId: "628dc18273d5796acafaf99d",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9a0"),
+    messageId: "628dc18273d5796acafaf99f",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9a2"),
+    messageId: "628dc18273d5796acafaf9a1",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9a4"),
+    messageId: "628dc18273d5796acafaf9a3",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9a6"),
+    messageId: "628dc18273d5796acafaf9a5",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9a8"),
+    messageId: "628dc18273d5796acafaf9a7",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9aa"),
+    messageId: "628dc18273d5796acafaf9a9",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9ac"),
+    messageId: "628dc18273d5796acafaf9ab",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9ae"),
+    messageId: "628dc18273d5796acafaf9ad",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9b0"),
+    messageId: "628dc18273d5796acafaf9af",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9b2"),
+    messageId: "628dc18273d5796acafaf9b1",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9b4"),
+    messageId: "628dc18273d5796acafaf9b3",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9b6"),
+    messageId: "628dc18273d5796acafaf9b5",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9b8"),
+    messageId: "628dc18273d5796acafaf9b7",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9ba"),
+    messageId: "628dc18273d5796acafaf9b9",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9bc"),
+    messageId: "628dc18273d5796acafaf9bb",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9be"),
+    messageId: "628dc18273d5796acafaf9bd",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9c0"),
+    messageId: "628dc18273d5796acafaf9bf",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9c2"),
+    messageId: "628dc18273d5796acafaf9c1",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9c4"),
+    messageId: "628dc18273d5796acafaf9c3",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9c6"),
+    messageId: "628dc18273d5796acafaf9c5",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9c8"),
+    messageId: "628dc18273d5796acafaf9c7",
+    receiverId: NumberInt("22"),
+    readFlag: true,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9ca"),
+    messageId: "628dc18273d5796acafaf9c9",
+    receiverId: NumberInt("22"),
+    readFlag: true,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9cc"),
+    messageId: "628dc18273d5796acafaf9cb",
+    receiverId: NumberInt("22"),
+    readFlag: true,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9d0"),
+    messageId: "628dc18273d5796acafaf9cf",
+    receiverId: NumberInt("22"),
+    readFlag: true,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9d2"),
+    messageId: "628dc18273d5796acafaf9d1",
+    receiverId: NumberInt("22"),
+    readFlag: true,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc18273d5796acafaf9d4"),
+    messageId: "628dc18273d5796acafaf9d3",
+    receiverId: NumberInt("22"),
+    readFlag: true,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);
+db.getCollection("message_ref").insert([ {
+    _id: ObjectId("628dc566c0b51165cdb76ca0"),
+    messageId: "628dbe0bc0b51165cdb76c9e",
+    receiverId: NumberInt("22"),
+    readFlag: false,
+    lastFlag: false,
+    _class: "xion.boot.online.entity.MessageRefEntity"
+} ]);

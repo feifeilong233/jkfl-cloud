@@ -6,6 +6,7 @@ import cloud.jkfl.video.service.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,8 +22,8 @@ public class UploadController {
 
 
     @RequestMapping(value ="/uploadVideo",method= RequestMethod.POST)
-    public R uploadVideo(MultipartFile file, HttpServletRequest request) throws Exception{
-        return uploadService.uploadVideo(file, request);
+    public R uploadVideo(MultipartFile file, HttpServletRequest request, @RequestParam("title") String title) throws Exception{
+        return uploadService.uploadVideo(file, request, title);
     }
 
     /**

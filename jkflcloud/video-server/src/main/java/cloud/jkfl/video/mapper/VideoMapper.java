@@ -21,4 +21,10 @@ public interface VideoMapper extends BaseMapper<EduVideo> {
     @Select("select * from edu_video order by rand() desc limit 2 ")
     public List<EduVideo> selectIndexData3();
 
+    @Select("select * from edu_video where vdo_label=#{label} order by rand() desc limit 5 ")
+    public List<EduVideo> recommoandList(String label);
+
+    @Select("select * from edu_video where vdo_collection = #{collection}")
+    public List<EduVideo> findCollection(String collection);
+
 }

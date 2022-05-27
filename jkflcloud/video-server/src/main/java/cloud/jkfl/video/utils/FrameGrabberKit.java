@@ -3,6 +3,7 @@ package cloud.jkfl.video.utils;
 import org.bytedeco.javacpp.opencv_core;
 import org.bytedeco.javacv.FFmpegFrameGrabber;
 import org.bytedeco.javacv.Frame;
+import org.bytedeco.javacv.OpenCVFrameConverter;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -29,6 +30,9 @@ public class FrameGrabberKit {
         ImgUrl = imgfile;//视频封面图保存路径
         return ImgUrl;
     }
+
+
+    static OpenCVFrameConverter.ToIplImage converter = new OpenCVFrameConverter.ToIplImage();
     /**
      * 获取指定视频的帧并保存为图片至指定目录
      * @param videofile  源视频文件路径
@@ -56,7 +60,7 @@ public class FrameGrabberKit {
             }
             i++;
         }
-        opencv_core.IplImage img = f.image;
+        opencv_core.IplImage img = converter.convertToIplImage(f);
         int owidth = img.width();
         int oheight = img.height();
         // 对截取的帧进行等比例缩放 宽350、高160
@@ -75,8 +79,8 @@ public class FrameGrabberKit {
          */
         BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
         //此方法返回 Graphics2D，但此处是出于向后兼容性的考虑。
-        bi.getGraphics().drawImage(f.image.getBufferedImage().getScaledInstance(width, height, Image.SCALE_SMOOTH),
-                0, 0, null);
+        /*bi.getGraphics().drawImage(f.image.getBufferedImage().getScaledInstance(width, height, Image.SCALE_SMOOTH),
+                0, 0, null);*/
         ImageIO.write(bi, "jpg", targetFile);
         //ff.flush();
         ff.stop();

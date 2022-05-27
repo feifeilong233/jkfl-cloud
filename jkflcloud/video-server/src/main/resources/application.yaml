@@ -5,8 +5,8 @@ spring:
     static-path-pattern: /**
   servlet:
     multipart:
-      max-file-size: 30000000
-      max-request-size: 50000000
+      max-file-size: 300MB
+      max-request-size: 500MB
   application:
     name: video-service
   datasource:

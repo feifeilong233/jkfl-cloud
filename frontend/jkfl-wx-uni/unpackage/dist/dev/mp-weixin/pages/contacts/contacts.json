@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "视频",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "swiper-dot": "../../components/common/swiper-dot",
+    "card": "../../components/common/card",
+    "media-list": "../../components/common/media-list"
+  }
+}

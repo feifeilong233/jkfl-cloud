@@ -1,0 +1,493 @@
+<template>
+	<view class="bg-dark">
+		<video id="video" ref="video" :src="src" :poster="poster" :controls="false" :show-center-play-btn="false"
+		 :show-fullscreen-btn="false" :show-progress="false" :enable-progress-gesture="false" style="width: 750rpx;height: 225px;"
+		 @fullscreenchange="fullscreenchange" @timeupdate="timeupdate" @play="isplay = true" @pause="isplay = false">
+			<view class="flex position-absolute  align-center justify-center " :style="videoBox">
+				<!-- 添加一个蒙版 -->
+				<view class="position-absolute left-0 right-0 top-0 bottom-0" :style="modalStyle" @touchstart="touchStart" @touchmove="touchMove"
+				 @touchend="touchEnd"></view>
+				 <!-- 锁 -->
+					<view v-if="fullScreenStatus && (showStatusBarStatus || lockScreenStatus)" class="position-absolute right-0 top-0 bottom-0 align-center justify-center" style="width: 80rpx;">
+						<view class="flex rounded align-center justify-center" style="width:60px;height:60px;background-color: rgba(0,0,0,0.4);" @click="lockScreen">
+							<text class="iconfont" :class="lockScreenStatus ? 'text-main':'text-white'">&#xe620;</text>
+						</view>
+					</view>
+				 
+				<!-- 提示框 -->
+				<view v-if="showToastStatus" class="rounded p-2" style="background-color: rgba(0,0,0,0.3);">
+					<text v-if="toast.type === 'progress'" class="font text-white">{{currentTime|formatTime}}/{{duration|formatTime}}</text>
+					<text v-if="toast.type === 'msg'" class="font text-white">{{toast.msg}}</text>
+				</view>
+				<!-- 全屏 -->
+				<!-- 顶部 -->
+				<view v-if="showStatusBarStatus && fullScreenStatus" class="video-bg-top position-absolute top-0 left-0 right-0 flex flex-1 justify-between align-center"
+				 style="height: 44px;">
+					<view class="flex align-center">
+						<view class="flex align-center">
+							<f-icon-btn :icon="'\ue612'" @click="fullOrExitScreen"></f-icon-btn>
+						</view>
+						<view class="flex align-center px-2">
+							<text class="text-white" style="font-size: 15px;lines: 1;">视频标题</text>
+						</view>
+					</view>
+				</view>
+				<!-- 底部 -->
+				<view v-if="showStatusBarStatus && fullScreenStatus" class="video-bg-bottom position-absolute bottom-0 left-0 right-0">
+					<view style="height: 88px;">
+						<view class="flex-1" style="padding-left: 15px;padding-right: 15px;">
+							<f-slider :currentTime="currentTime" :duration="duration" @change="sliderChange" @update="sliderUpdate"></f-slider>
+						</view>
+						<view style="height: 44px" class="flex align-stretch align-center justify-between">
+							<view class="flex">
+								<f-icon-btn v-if="!isplay" :icon="'\ue63a'" size="22" @click="playOrPause"></f-icon-btn>
+								<f-icon-btn v-else :icon="'\ue605'" size="22" @click="playOrPause"></f-icon-btn>
+								<view class="flex align-center justify-center" style="width: 80px">
+									<text class="font-sm text-white pl-1"> {{currentTime|formatTime}}/{{duration|formatTime}} </text>
+									<!-- text内部能用回车 -->
+								</view>
+							</view>
+							<view class="flex">
+								<view class="flex align-center" style="height: 44px;padding-left: 15px;padding-right: 15px;" @click="openDrawer('speed')">
+									<text class="text-white" style="font-size: 15px;">{{rate}}</text>
+								</view>
+								<view class="flex align-center" style="height: 44px;padding-left: 15px;padding-right: 15px;" @click="openDrawer('quality')">
+									<text class="text-white" style="font-size: 15px;">{{quality|formatQuality}}</text>
+								</view>
+								<view class="flex align-center" style="height: 44px;padding-left: 15px;padding-right: 15px;" @click="openDrawer('video')">
+									<text class="text-white" style="font-size: 15px;">选集</text>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<!-- 功能弹框 -->
+				<view v-if="fullScreenStatus && showDrawer" class="flex flex-column  position-absolute right-0 top-0 bottom-0"
+				 style="background-color:rgba(0,0,0,0.8)">
+					<!-- 修改播放速度 -->
+					<view v-if="drawerType == 'speed'" class="flex-1 flex flex-column align-center justify-center" style="width: 100px;">
+						<view class="flex-1 flex" v-for="(item,index) in rateList" :key="index" @click="changeSpeed(item)">
+							<text :class="item == rate? 'text-mian':'text-white'">{{item}}</text>
+						</view>
+					</view>
+					<!-- 选集 -->
+					<view v-if="drawerType == 'video'" class="flex-1 flex flex-column" style="width: 300px;">
+						<scroll-view scroll-y="true" class="flex-1 p-2">
+							<view class="border p-2 flex rounded mb-2" v-for="(item,index) in videoList" :key="index" @click="changeVideo(item,index)">
+								<text class="text-white" style="font-size: 14px;lines: 1;" :class="videoIndex === index ? 'text-main' : 'text-white'">{{item.title}}</text>
+							</view>
+						</scroll-view>
+					</view>
+					<!-- 切换清晰度 -->
+					<view v-if="drawerType == 'quality'" class="flex-1 flex flex-column align-center justify-center" style="width: 100px;">
+						<view class="flex-1 flex" v-for="(item,index) in qualityList" :key="index" @click="changeQuality(item)">
+							<text :class="quality == item.value? 'text-main':'text-white'">{{item.name}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</video>
+		<!-- 非全屏 -->
+		<!-- 顶部 -->
+		<view v-if="showStatusBarStatus && !fullScreenStatus" class="video-bg-top position-fixed top-0 left-0 right-0">
+			<view class="statusBar" :style="'height:'+ statusBarHeight +'px;'"></view>
+			<view style="44px" class="flex align-center">
+				<f-icon-btn :icon="'\ue612'" size="22" @click="back"></f-icon-btn>
+			</view>
+		</view>
+		<!-- 底部 -->
+		<view v-if="showStatusBarStatus && !fullScreenStatus" class="video-bg-bottom position-fixed bottom-0 left-0 right-0">
+			<view style="height: 44px" class="flex align-stretch">
+				<f-icon-btn v-if="!isplay" :icon="'\ue63a'" size="22" @click="playOrPause"></f-icon-btn>
+				<f-icon-btn v-else :icon="'\ue605'" size="22" @click="playOrPause"></f-icon-btn>
+				<view class="flex-1">
+					<f-slider :currentTime="currentTime" :duration="duration" @change="sliderChange" @update="sliderUpdate"></f-slider>
+				</view>
+				<view class="flex align-center justify-center" style="width: 80px">
+					<text class="font-sm text-white pl-1"> {{currentTime|formatTime}}/{{duration|formatTime}} </text>
+					<!-- text内部能用回车 -->
+				</view>
+				<f-icon-btn :icon="'\ue800'" size="22" @click="fullOrExitScreen"></f-icon-btn>
+			</view>
+		</view>
+
+	</view>
+</template>
+
+<script>
+	import fIconBtn from './components/f-icon-btn.vue';
+	import fSlider from './components/f-slider.vue';
+	const d = weex.requireModule('dom');
+	let videoCTX = null;
+	let showToastTimer = null;
+	let showBarTimer = null;
+	const demoList = [{
+		index: 0,
+		title: "优化空数据默认显示",
+		list: [{
+			name: "标清",
+			value: "SD",
+			url: "https://douyinzcmcss.oss-cn-shenzhen.aliyuncs.com/%E8%AF%BE%E6%97%B61.%20%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D.mp4"
+		}, {
+			name: "高清",
+			value: "HD",
+			url: "https://douyinzcmcss.oss-cn-shenzhen.aliyuncs.com/%E8%AF%BE%E6%97%B61.%20%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D.mp4"
+		}, {
+			name: "超清",
+			value: "FHD",
+			url: "https://douyinzcmcss.oss-cn-shenzhen.aliyuncs.com/%E8%AF%BE%E6%97%B61.%20%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D.mp4"
+		}],
+	}, {
+		index: 0,
+		title: "2018年平昌冬",
+		list: [{
+			name: "标清",
+			value: "SD",
+			url: "https://douyinzcmcss.oss-cn-shenzhen.aliyuncs.com/%E8%AF%BE%E6%97%B61.%20%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D.mp4"
+		}],
+	}]
+	export default {
+		provide() {
+			return {
+				v: this
+			}
+		},
+		components: {
+			fIconBtn,
+			fSlider
+		},
+		data() {
+			return {
+				src: "https://douyinzcmcss.oss-cn-shenzhen.aliyuncs.com/%E8%AF%BE%E6%97%B61.%20%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D.mp4",
+				poster: "https://douyinzcmcss.oss-cn-shenzhen.aliyuncs.com/shengchengqi/datapic/1.jpg",
+				isplay: false,
+				statusBarHeight: 0,
+				currentTime: 0,
+				duration: 0,
+
+				windowWidth: 0,
+				windowHeight: 0,
+
+				fullScreenStatus: false,
+
+				showToastStatus: false,
+				showStatusBarStatus: true,
+
+				toast: {
+					type: "msg",
+					msg: "提示"
+				},
+				dbCount: 0,
+
+				oldTouchs: {},
+				oldValue: {},
+				touchType: null,
+				platform: "android",
+				showDrawer: false,
+				drawerType: "speed",
+
+				// 当前速度
+				rate: "1.0",
+				// 速度选择
+				rateList: ['2.0', '1.5', '1.25', '1.0', '0.8', '0.5'],
+				// 选集
+				videoIndex: 0,
+				videoList: [],
+
+				quality: "HD",
+				// 锁屏
+				lockScreenStatus:false
+			}
+		},
+		created() {
+			let res = uni.getSystemInfoSync()
+			// console.log(res)
+			this.statusBarHeight = res.statusBarHeight
+			this.windowHeight = res.windowHeight
+			this.windowWidth = res.windowWidth
+			this.platform = res.platform
+			// 引入图标
+			d.addRule('fontFace', {
+				'fontFamily': "iconfont",
+				'src': "url('https://at.alicdn.com/t/font_1419176_mzo8rsjxi4c.ttf')"
+			})
+
+			this.videoList = demoList
+		},
+		mounted() {
+			videoCTX = this.$refs.video
+		},
+		filters: {
+			formatTime(result) {
+				var h = Math.floor(result / 3600) < 10 ? '0' + Math.floor(result / 3600) : Math.floor(result / 3600);
+				var m = Math.floor((result / 60 % 60)) < 10 ? '0' + Math.floor((result / 60 % 60)) : Math.floor((result / 60 % 60));
+				var s = Math.floor((result % 60)) < 10 ? '0' + Math.floor((result % 60)) : Math.floor((result % 60));
+				return result = result > 3600 ? (h + ":" + m + ":" + s) : m + ":" + s;
+			},
+			formatQuality(val){
+				let arr = {
+					SD:"标清",
+					HD:"高清",
+					FHD:"超清"
+				}
+				return arr[val]
+			}
+		},
+		computed: {
+			videoBox() {
+				return this.fullScreenStatus ? `width:${this.windowHeight};height:${this.windowWidth}` :
+					'width:750rpx;height: 225px;';
+			},
+			modalStyle() {
+				let top = this.statusBarHeight
+				return `top:${top}px;bottom:44px;`
+			},
+			qualityList() {
+				return this.videoList[this.videoIndex] ? this.videoList[this.videoIndex].list : [] 
+			}
+		},
+		methods: {
+			// 解锁/锁屏
+			lockScreen(){
+				this.lockScreenStatus = !this.lockScreenStatus
+				if(this.lockScreenStatus) {
+					this.hideStatusBar()
+				} else {
+					this.showStatusBar()
+				}
+			},
+			// 切换清晰度
+			changeQuality(item){
+				videoCTX.pause()
+				if(!item.url){
+					return uni.showToast({
+						title: '视频链接不存在',
+						icon: 'none'
+					});
+				}
+				this.src = item.url
+				this.quality = item.value
+				uni.showToast({
+					title: '清晰度切换为：'+item.name,
+					icon: 'none'
+				});
+				setTimeout(()=>{
+					videoCTX.play()
+				},300)
+				
+			},
+			// 选集
+			changeVideo(item, index) {
+				this.videoIndex = index
+				videoCTX.stop()
+				// 获取当前视频数据
+				let list = this.videoList[index].list
+				let i = list.findIndex(v => v.value === this.quality)
+				if (i === -1) {
+					if (list.length > 0) {
+						this.src = list[0].url
+					} else {
+						return uni.showToast({
+							title: '视频链接不存在',
+							icon: 'none'
+						});
+					}
+				} else {
+					this.src = list[i].url
+				}
+
+				uni.showToast({
+					title: '切换到：' + item.title,
+					icon: 'none'
+				});
+
+				setTimeout(() => {
+					videoCTX.seek(0)
+					videoCTX.play()
+				}, 300)
+
+				this.showDrawer = false
+			},
+			// 修改速度
+			changeSpeed(rate) {
+				this.rate = rate
+				videoCTX.playbackRate(this.rate)
+				uni.showToast({
+					title: '当前速度修改为：' + this.rate,
+					icon: 'none'
+				});
+				this.showDrawer = false
+			},
+			// 功能框显示
+			openDrawer(type) {
+				this.drawerType = type
+				this.showDrawer = true
+			},
+			fullOrExitScreen() {
+				if (this.fullScreenStatus) {
+					videoCTX.exitFullScreen() // 退出全屏
+				} else {
+					videoCTX.requestFullScreen() // 进入全屏
+				}
+			},
+			// 显示控制条
+			showStatusBar() {
+				this.showStatusBarStatus = true
+				showBarTimer = showBarTimer ? clearTimeout(showBarTimer) : null
+				showBarTimer = setTimeout(() => {
+					this.showStatusBarStatus = false
+					showBarTimer = null
+				}, 2000)
+			},
+			// 隐藏控制条
+			hideStatusBar() {
+				this.showStatusBarStatus = false
+			},
+			// 显示或隐藏控制条
+			showOrHideStatusBar() {
+				this.showStatusBarStatus ? this.hideStatusBar() : this.showStatusBar()
+			},
+			back() {
+				uni.navigateBack({
+					delta: 1
+				});
+			},
+			// 暂停 or 播放
+			playOrPause() {
+				this.showToast({
+					type: "msg",
+					msg: this.isplay ? "暂停" : "播放"
+				})
+				if (this.isplay) {
+					videoCTX.pause();
+				} else {
+					videoCTX.play();
+				}
+			},
+			fullscreenchange(e) {
+				//console.log(e);
+				this.fullScreenStatus = e.detail.fullScreen
+			},
+			timeupdate(e) {
+				//console.log(e.detail.currentTime,e.detail.duration);
+				if (!this.showToastStatus) {
+					this.currentTime = parseInt(e.detail.currentTime)
+				}
+				this.duration = parseInt(e.detail.duration)
+			},
+			// 视频跳转到进度条跳转的位置
+			sliderChange(e) {
+				videoCTX.seek(e)
+				this.showToastStatus = false
+				videoCTX.play()
+			},
+			// 视频进度条拖动时候 时间变更
+			sliderUpdate(e) {
+				this.showToastStatus = true
+				videoCTX.pause()
+				this.currentTime = e;
+				this.showToast({
+					type: "progress",
+					autoClose: false
+				})
+			},
+			showToast(options) {
+				this.toast.type = options.type || "msg"
+				this.toast.msg = options.msg || "提示"
+				this.showToastStatus = true
+				// 是否自动关闭
+				if (options.autoClose !== false) {
+					clearTimeout(showToastTimer)
+					showToastTimer = setTimeout(() => {
+						this.showToastStatus = false
+						showToastTimer = null
+					}, 500)
+				}
+			},
+			touchStart(e) {
+				this.oldTouchs = e.changedTouches[0]
+				this.oldValue = {
+					currentTime: this.currentTime
+				}
+			},
+			touchMove(e) {
+				if(this.lockScreenStatus) return
+				let newTouchs = e.changedTouches[0]
+				if (!this.touchType) {
+					this.touchType = Math.abs(newTouchs.pageX - this.oldTouchs.pageX) > 20 ? 'currentTime' : null
+					//console.log(this.oldTouchs.pageX)
+					// ios 全屏
+					if (this.platform === 'ios' && this.fullScreenStatus) {
+						this.touchType = Math.abs(newTouchs.page - this.oldTouchs.page) > 20 ? 'currentTime' : null
+					}
+
+					if (this.touchType === 'currentTime') {
+						videoCTX.pause()
+					}
+				} else if (this.touchType === 'currentTime') {
+
+					// 显示提示
+					this.showToast({
+						type: "progress",
+						autoClose: false
+					})
+					// 显示进度条
+					this.showStatusBar()
+
+					let newCurrentTime = (newTouchs.pageX - this.oldTouchs.pageX) / 250 * this.duration * 2 + this.oldValue.currentTime *
+						1
+					// ios 且全屏
+					if (this.platform === 'ios' && this.fullScreenStatus) {
+						let newCurrentTime = (newTouchs.pageY - this.oldTouchs.pageY) / 250 * this.duration * 2 + this.oldValue.currentTime *
+							1
+					}
+					newCurrentTime = newCurrentTime > this.duration ? this.duration : newCurrentTime
+					newCurrentTime = newCurrentTime < 0 ? 0 : newCurrentTime
+					// 替换当前时间
+					this.currentTime = newCurrentTime
+				}
+			},
+			touchEnd(e) {
+				if(this.lockScreenStatus) return
+				if (this.touchType === 'currentTime') {
+					videoCTX.seek(this.currentTime)
+					videoCTX.play()
+				} else {
+					if (this.dbCount === 1 || this.dbCount === 0) {
+						this.dbCount++
+					}
+
+					if (this.dbCount > 0) {
+						setTimeout(() => {
+							// 单击
+							if (this.dbCount === 1) {
+								// 显示或隐藏控制条
+								this.showOrHideStatusBar()
+								this.showDrawer = false
+								// 双击
+							} else if (this.dbCount == 2) {
+								// 播放或者暂停
+								this.playOrPause()
+							}
+							this.dbCount = 0
+						}, 250)
+					}
+				}
+				this.touchType = null
+				this.showToastStatus = false
+			}
+		},
+
+
+	}
+</script>
+
+<style>
+	.video-bg-top {
+		background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+	}
+
+	.video-bg-bottom {
+		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+	}
+</style>

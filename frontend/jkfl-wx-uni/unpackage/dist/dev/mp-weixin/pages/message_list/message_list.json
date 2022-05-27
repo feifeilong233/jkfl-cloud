@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "消息列表",
+  "usingComponents": {
+    "uni-list": "../../components/uni-list/uni-list",
+    "uni-list-chat": "../../components/uni-list-chat/uni-list-chat"
+  }
+}

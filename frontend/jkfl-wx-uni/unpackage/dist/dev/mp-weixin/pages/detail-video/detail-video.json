@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "视频播放",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "pop-up": "../../components/common/pop-up"
+  }
+}

@@ -13,7 +13,7 @@ public interface UploadService {
      * @param request
      * @return
      */
-    public R uploadVideo(MultipartFile file, HttpServletRequest request) throws Exception;
+    public R uploadVideo(MultipartFile file, HttpServletRequest request, String title) throws Exception;
 
     /**
      * 图片文件上传
